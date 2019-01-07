@@ -15,4 +15,8 @@ public class Square{
     colorRed=red;
     occupied=full;
   }
+
+  public boolean isOccupied(){
+    return occupied==true;
+  }
 }
