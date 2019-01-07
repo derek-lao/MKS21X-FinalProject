@@ -4,6 +4,8 @@ public class Board{
   public Board(){
     field=new Square[8][8];
   }
+  public void clear(){}
+  public void setup(){}
 
   public static void main(String[] args){
     // // testing to make sure I have 8x8 board
