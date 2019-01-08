@@ -23,5 +23,7 @@ public class Square{
     return occupied==true;
   }
 
-  
+  public boolean getColor(){
+    return colorRed;
+  }
 }
