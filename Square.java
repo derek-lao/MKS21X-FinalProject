@@ -16,7 +16,12 @@ public class Square{
     occupied=full;
   }
 
+  /**
+  * @return true if the square is occupied, false if it is not
+  */
   public boolean isOccupied(){
     return occupied==true;
   }
+
+  
 }
