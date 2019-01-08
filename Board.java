@@ -4,7 +4,12 @@ public class Board{
   public Board(){
     field=new Square[8][8];
   }
-  public void clear(){}
+
+  // does the same thing as the constructor...  may be a redundant method.
+  // or maybe it is not such a good idea to do this
+  public void clear(){
+    field=new Square[8][8];
+  }
   public void setup(){}
 
   public static void main(String[] args){
