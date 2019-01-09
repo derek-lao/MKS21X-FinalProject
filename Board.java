@@ -36,7 +36,10 @@ public class Board{
 
   public void setup(){
     clear(); // this prevents weird things from happening. It ensures all squares are correct
-    
+    for(int y=0;y<field.length;y++)
+    {
+      
+    }
   }
 
   public static void main(String[] args){
