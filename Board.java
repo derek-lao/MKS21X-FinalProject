@@ -42,11 +42,24 @@ public class Board{
   */
   public void setup(){
     clear(); // this prevents weird things from happening. It ensures all squares are correct
-    for(int y=0;y<field.length;y++)
+    for(int y=0;y<3;y++)
     {
       for(int x=0;x<field[y].length;x++)
       {
-        if(field[x][y].getColor()
+        if(field[x][y].isRed())
+        {
+          field[x][y].piece=new Piece(false,false,field[x][y]);
+        }
+      }
+    }
+    for(int y=5;y<field.length;y++)
+    {
+      for(int x=0;x<field[y].length;x++)
+      {
+        if(field[x][y].isRed())
+        {
+          field[x][y].piece=new Piece(true,false,field[x][y]);
+        }
       }
     }
   }
