@@ -8,6 +8,9 @@ public class Board{
 
   // does the same thing as the constructor...  may be a redundant method.
   // or maybe it is not such a good idea to do this
+  /**
+  * clears the board by creating a new checkered board
+  */
   public void clear(){
     field=new Square[8][8];
     for(int y=0;y<field.length;y+=2)
@@ -34,11 +37,17 @@ public class Board{
     }
   }
 
+  /**
+  * clears board, and puts pieces in board.
+  */
   public void setup(){
     clear(); // this prevents weird things from happening. It ensures all squares are correct
     for(int y=0;y<field.length;y++)
     {
-      
+      for(int x=0;x<field[y].length;x++)
+      {
+        if(field[x][y].getColor()
+      }
     }
   }
 
