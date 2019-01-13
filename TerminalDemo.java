@@ -44,11 +44,11 @@ public class TerminalDemo {
 		while(running){
 
 			terminal.moveCursor(x,y);
-			terminal.applyBackgroundColor(Terminal.Color.RED);
-			terminal.applyForegroundColor(Terminal.Color.GREEN);
+			terminal.applyBackgroundColor(Terminal.Color.RED);//cursor background color
+			terminal.applyForegroundColor(Terminal.Color.GREEN);//cursor foreground color
 			//applySGR(a,b) for multiple modifiers (bold,blink) etc.
-			terminal.applySGR(Terminal.SGR.ENTER_UNDERLINE);
-			terminal.putCharacter('\u00a4');
+			// terminal.applySGR(Terminal.SGR.ENTER_UNDERLINE);
+			terminal.putCharacter('\u00a4');//puts a character in place of the cursor
 			//terminal.putCharacter(' ');
 			terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
 			terminal.applyForegroundColor(Terminal.Color.DEFAULT);
