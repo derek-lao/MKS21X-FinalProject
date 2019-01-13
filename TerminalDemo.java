@@ -44,8 +44,8 @@ public class TerminalDemo {
 		while(running){
 
 			terminal.moveCursor(x,y);
-			terminal.applyBackgroundColor(Terminal.Color.YELLOW);
-			terminal.applyForegroundColor(Terminal.Color.BLACK);
+			terminal.applyBackgroundColor(Terminal.Color.RED);
+			terminal.applyForegroundColor(Terminal.Color.GREEN);
 			//applySGR(a,b) for multiple modifiers (bold,blink) etc.
 			terminal.applySGR(Terminal.SGR.ENTER_UNDERLINE);
 			terminal.putCharacter('\u00a4');
