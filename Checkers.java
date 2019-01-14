@@ -55,9 +55,10 @@ public class Checkers{
 			// terminal.applySGR(Terminal.SGR.RESET_ALL);//resets all code since the last Terminal.SGR, I think?
 
 
+      terminal.moveCursor(4,5);
       for(int r=4;r>12;r++)
       {
-        for(int c=4;c>13;c++)
+        for(int c=5;c>13;c++)
         {
           if(field.getSquare(r-4,c-5).isRed())
           {
