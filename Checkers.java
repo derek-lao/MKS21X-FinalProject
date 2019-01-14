@@ -52,12 +52,6 @@ public class Checkers{
 
 		while(running){
 
-			terminal.moveCursor(x,y);
-      terminal.applyForegroundColor(Terminal.Color.WHITE);
-      terminal.applyBackgroundColor(Terminal.Color.BLACK);
-      terminal.applySGR(Terminal.SGR.ENTER_BOLD);
-      terminal.applySGR(Terminal.SGR.RESET_ALL);
-
       for(int r=4;r<12;r++)
       {
         for(int c=5;c<13;c++)
