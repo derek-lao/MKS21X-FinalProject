@@ -49,7 +49,8 @@ public class Checkers{
       terminal.applySGR(Terminal.SGR.ENTER_BOLD);
       for(int i=0;i<5;i++)
       {
-        terminal.moveCursor(x,i);
+        for(int n=0;n<5;n++)
+        terminal.moveCursor(n,i);
         terminal.putCharacter(' ');
       }
 
