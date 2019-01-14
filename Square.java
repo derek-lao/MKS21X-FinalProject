@@ -35,14 +35,7 @@ public class Square{
   }
 
   public void setPiece(Piece warrior){
-    if(piece!=null)
-    {
-      piece=warrior;
-    }
-    else
-    {
-      piece=null;
-    }
+    piece=warrior;
   }
 
   public void setSquare1(Square one){
