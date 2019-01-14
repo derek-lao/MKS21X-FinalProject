@@ -47,11 +47,17 @@ public class Checkers{
       terminal.applyForegroundColor(Terminal.Color.WHITE);
       terminal.applyBackgroundColor(Terminal.Color.RED);
       terminal.applySGR(Terminal.SGR.ENTER_BOLD);
-      for(int i=0;i<5;i++)
+      for(int i=1;i<6;i++)
       {
-        for(int n=0;n<5;n++)
+        terminal.moveCursor(i,5);
+        if(i%2==1)
         {
-          terminal.moveCursor(n,i);
+          terminal.applyBackgroundColor(Terminal.Color.RED);
+          terminal.putCharacter(' ');
+        }
+        if(i%2==0)
+        {
+          terminal.applyBackgroundColor(Terminal.Color.GREEN);
           terminal.putCharacter(' ');
         }
       }
