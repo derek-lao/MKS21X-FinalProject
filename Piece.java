@@ -17,14 +17,41 @@ public class Piece{
   public Square getPosition(){
     return position;
   }
+  public void setPosition(Square target){
+    position=target;
+  }
   public boolean move(Square target){
-    if(target==position.square1||target==position.square2||
-    target==position.square3||target==position.square4)
+    if(target!=null&&(target==position.getSquare1()||target==position.getSquare2()||
+    target==position.getSquare3()||target==position.getSquare4())&&
+    target.isOccupied()==false)
     {
-      if(target.isOccupied()==false)
+      if(this.king)
       {
-        
+        target.setPiece(this);
+        this.position.setPiece(null);
+        this.setPosition(target);
+        return true;
+      }
+      else
+      {
+        if(target==position.getSquare1()||target==position.getSquare2())
+        {
+          target.setPiece(this);
+          this.position.setPiece(null);
+          this.setPosition(target);
+          return true;
+        }
+        if(target==position.getSquare3()||target==position.getSquare4())
+        {
+          return false;
+        }
       }
     }
+
+    else
+    {
+      return false;
+    }
   }
+
 }

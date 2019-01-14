@@ -34,9 +34,17 @@ public class Square{
     return colorRed;
   }
 
-  public String toString(){
-    String answer="["+ xcor + "," + ycor + "";
-    return answer;
+  public void setPiece(Piece warrior){
+    if(piece!=null)
+    {
+      piece=warrior;
+      occupied=true;
+    }
+    else
+    {
+      piece=null;
+      occupied=false;
+    }
   }
 
   public void setSquare1(Square one){
@@ -51,16 +59,16 @@ public class Square{
   public void setSquare4(Square four){
     square4=four;
   }
-  public void getSquare1(){
+  public Square getSquare1(){
     return square1;
   }
-  public void getSquare2(){
+  public Square getSquare2(){
     return square2;
   }
-  public void getSquare3(){
+  public Square getSquare3(){
     return square3;
   }
-  public void getSquare4(){
+  public Square getSquare4(){
     return square4;
   }
 }
