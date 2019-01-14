@@ -74,7 +74,7 @@ public class Piece{
     Square capture3=position.getSquare3().getSquare3();
     Square capture4=position.getSquare4().getSquare4();
     boolean status1= !capture1.isOccupied();
-    boolean status2= capture2.piece!=null;
+    boolean status2= !capture2.isOccupied();
     boolean status3= !capture3.isOccupied();
     boolean status4= !capture4.isOccupied();
     if(captive!=null&&captive.colorRed!=this.colorRed&&
