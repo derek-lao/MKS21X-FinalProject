@@ -1,6 +1,6 @@
 public class Square{
   private int xcor, ycor;
-  private boolean colorRed, occupied;
+  private boolean colorRed;
   private Square square1,square2,square3,square4;
   public Piece piece;
 

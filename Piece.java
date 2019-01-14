@@ -22,9 +22,9 @@ public class Piece{
   }
 
   private void motion(Square target){
-    target.setPiece(this);
     this.position.setPiece(null);
     this.setPosition(target);
+    target.setPiece(this);
   }
   public boolean move(Square target){
     Square move1=position.getSquare1();
