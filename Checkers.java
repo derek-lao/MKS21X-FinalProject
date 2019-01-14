@@ -106,9 +106,11 @@ public class Checkers{
 					running = false;
 				}
 
-        if(key.getKind() == Key.Kind.Enter)
+        if(key.getKind() == Key.Kind.CursorLocation)
         {
-
+          terminal.moveCursor(x,y);
+          terminal.putCharacter('X');
+          x--;y--;
         }
 				if (key.getKind() == Key.Kind.ArrowLeft) {
 					terminal.moveCursor(x,y);

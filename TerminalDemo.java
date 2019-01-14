@@ -113,6 +113,13 @@ public class TerminalDemo {
 					y++;
 					x++;
 				}
+
+				if(key.getKind() == Key.Kind.CursorLocation)
+        {
+          terminal.moveCursor(x,y);
+          terminal.putCharacter('X');
+          x--;y--;
+        }
 				putString(1,4,terminal,"["+key.getCharacter() +"]");
 				putString(1,1,terminal,key+"        ");//to clear leftover letters pad withspaces
 			}
