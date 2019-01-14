@@ -46,7 +46,7 @@ public class Piece{
           this.motion(target);
           return true;
         }
-        if(!this.colorRed&&(target==move3||target==move4))
+        if((!this.colorRed)&&(target==move3||target==move4))
         {
           this.motion(target);
           return true;
