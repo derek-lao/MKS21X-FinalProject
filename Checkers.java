@@ -33,7 +33,7 @@ public class Checkers{
 		terminal.enterPrivateMode();
 
 		TerminalSize size = terminal.getTerminalSize();
-		terminal.setCursorVisible(false);
+		terminal.setCursorVisible(true);
 
 		boolean running = true;
 
