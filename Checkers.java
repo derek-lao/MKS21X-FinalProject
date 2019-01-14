@@ -56,7 +56,7 @@ public class Checkers{
       field.setup();
       x=4;
       y=5;
-      terminal.moveCursor(x,y);
+      terminal.moveCursor(4,5);
       for(int r=x;r>12;r++)
       {
         for(int c=y;c>13;c++)
