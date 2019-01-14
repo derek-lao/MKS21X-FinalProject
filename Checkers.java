@@ -58,11 +58,11 @@ public class Checkers{
 
 			terminal.moveCursor(4,5);
 			terminal.applyBackgroundColor(Terminal.Color.RED);
-			terminal.applyForegroundColor(Terminal.Color.YELLOW);
+			terminal.applyForegroundColor(Terminal.Color.GREEN);
 			// terminal.applySGR(Terminal.SGR.ENTER_BOLD);
 			terminal.putCharacter(' ');
 			terminal.putCharacter(' ');
-      terminal.applyBackgroundColor(Terminal.Color.YELLOW);
+      terminal.applyBackgroundColor(Terminal.Color.GREEN);
 			terminal.putCharacter(' ');
 			terminal.putCharacter(' ');
 			terminal.moveCursor(4,6);
@@ -71,8 +71,8 @@ public class Checkers{
       terminal.applyBackgroundColor(Terminal.Color.RED);
 			terminal.putCharacter(' ');
 			terminal.putCharacter(' ');
-			terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
-			terminal.applyForegroundColor(Terminal.Color.DEFAULT);
+			// terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+			// terminal.applyForegroundColor(Terminal.Color.DEFAULT);
 
       terminal.moveCursor(4,5);
       terminal.applyBackgroundColor(BLACK);
