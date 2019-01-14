@@ -57,9 +57,9 @@ public class Checkers{
       x=4;
       y=5;
       terminal.moveCursor(4,5);
-      for(int r=x;r>12;r++)
+      for(int r=4;r>12;r++)
       {
-        for(int c=y;c>13;c++)
+        for(int c=4;c>13;c++)
         {
           terminal.moveCursor(r,c);
           if(field.getSquare(r-4,c-5).isRed())
