@@ -63,10 +63,12 @@ public class Checkers{
           if(field.getSquare(r-4,c-5).isRed())
           {
             terminal.applyBackgroundColor(Terminal.Color.RED);
+            terminal.putCharacter(' ');
           }
           if(!field.getSquare(r-4,c-5).isRed())
           {
-            terminal.applyBackgroundColor(Terminal.Color.CYAN);
+            terminal.applyBackgroundColor(Terminal.Color.BLACK);
+            terminal.putCharacter(' ');
           }
         }
       }
