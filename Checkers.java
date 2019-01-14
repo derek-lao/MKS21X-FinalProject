@@ -59,15 +59,16 @@ public class Checkers{
       {
         for(int c=4;c>13;c++)
         {
-          terminal.moveCursor(r,c);
           if(field.getSquare(r-4,c-5).isRed())
           {
+            terminal.moveCursor(r,c);
             terminal.applyBackgroundColor(Terminal.Color.RED);
             terminal.applySGR(Terminal.SGR.ENTER_BOLD);
             terminal.putCharacter(' ');
           }
           if(!field.getSquare(r-4,c-5).isRed())
           {
+            terminal.moveCursor(r,c);
             terminal.applyBackgroundColor(Terminal.Color.BLACK);
             terminal.applySGR(Terminal.SGR.ENTER_BOLD);
             terminal.putCharacter(' ');
