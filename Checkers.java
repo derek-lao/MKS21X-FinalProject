@@ -44,8 +44,8 @@ public class Checkers{
 		while(running){
 
 			terminal.moveCursor(x,y);
-      terminal.applyForegroundColor(Terminal.Color.DEFAULT);
-      terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+      terminal.applyForegroundColor(Terminal.Color.WHITE);
+      terminal.applyBackgroundColor(Terminal.Color.BLACK);
       terminal.applySGR(Terminal.SGR.ENTER_BOLD);
 
       for(int r=4;r<12;r++)
