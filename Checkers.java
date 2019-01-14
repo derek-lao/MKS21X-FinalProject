@@ -47,6 +47,17 @@ public class Checkers{
 			terminal.applyBackgroundColor(Terminal.Color.RED);//cursor background color
 			terminal.applyForegroundColor(Terminal.Color.GREEN);//cursor foreground color
 			//applySGR(a,b) for multiple modifiers (bold,blink) etc.
+      terminal.putCharacter(' ');
+			terminal.putCharacter(' ');
+      terminal.applyBackgroundColor(Terminal.Color.GREEN);
+			terminal.putCharacter(' ');
+			terminal.putCharacter(' ');
+			terminal.moveCursor(4,6);
+			terminal.putCharacter(' ');
+			terminal.putCharacter(' ');
+      terminal.applyBackgroundColor(Terminal.Color.RED);
+			terminal.putCharacter(' ');
+			terminal.putCharacter(' ');
 			terminal.applySGR(Terminal.SGR.ENTER_UNDERLINE);//underlines on bottom
 			terminal.putCharacter('\u00a4');//puts a character in place of the cursor
 			//terminal.putCharacter(' ');
