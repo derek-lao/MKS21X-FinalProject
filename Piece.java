@@ -41,12 +41,17 @@ public class Piece{
       }
       else
       {
-        if(target==move1||target==move2)
+        if(this.colorRed&&(target==move1||target==move2))
         {
           this.motion(target);
           return true;
         }
-        if(target==move3||target==move4)
+        if(this.colorRed&&(target==move3||target==move4))
+        {
+          this.motion(target);
+          return true;
+        }
+        else
         {
           return false;
         }
@@ -87,7 +92,7 @@ public class Piece{
       }
       else
       {
-        if(captive==cap1||captive==cap2)
+        if(colorRed&&(captive==cap1||captive==cap2))
         {
           if(captive==cap1) this.motion(capture1);
           if(captive==cap2) this.motion(capture2);
@@ -95,7 +100,15 @@ public class Piece{
           captive.setPosition(null);
           return true;
         }
-        if(captive==cap3||captive==cap4)
+        if(!colorRed&&(captive==cap3||captive==cap4))
+        {
+          if(captive==cap3) this.motion(capture3);
+          if(captive==cap4) this.motion(capture4);
+          captive.getPosition().piece=null;
+          captive.setPosition(null);
+          return true;
+        }
+        else
         {
           return false;
         }
@@ -109,5 +122,5 @@ public class Piece{
     if(!colorRed && !king && position.getY()==7) king=true;
   }
 
-  
+
 }
