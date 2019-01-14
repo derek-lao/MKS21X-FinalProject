@@ -13,20 +13,20 @@ public class Board{
   */
   public void clear(){
     field=new Square[8][8];
-    for(int y=0;y<field.length;y+=2)
+    for(int y=0;y<8;y+=2)
     {
-      for(int x=0;x<field[0].length;x+=2)
+      for(int x=0;x<8;x+=2)
       {
         field[y][x]=new Square(x,y,true,null);
       }
-      for(int x=1;x<field[1].length;x+=2)
+      for(int x=1;x<8;x+=2)
       {
         field[y][x]=new Square(x,y,false,null);
       }
     }
-    for(int y=1;y<field.length;y+=2)
+    for(int y=1;y<8;y+=2)
     {
-      for(int x=0;x<field[0].length;x+=2)
+      for(int x=0;x<8;x+=2)
       {
         field[y][x]=new Square(x,y,false,null);
       }
@@ -95,19 +95,19 @@ public class Board{
     clear(); // this prevents weird things from happening. It ensures all squares are correct
     for(int y=0;y<3;y++)
     {
-      for(int x=0;x<field[y].length;x++)
+      for(int x=0;x<8;x++)
       {
-        if(field[y][x].isRed())
+        if(!field[y][x].isRed())
         {
           field[y][x].piece=new Piece(false,false,field[y][x]);
         }
       }
     }
-    for(int y=5;y<field.length;y++)
+    for(int y=5;y<8;y++)
     {
-      for(int x=0;x<field[y].length;x++)
+      for(int x=0;x<8;x++)
       {
-        if(field[y][x].isRed())
+        if(!field[y][x].isRed())
         {
           field[y][x].piece=new Piece(true,false,field[y][x]);
         }
