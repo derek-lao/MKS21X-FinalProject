@@ -25,7 +25,7 @@ public class Checkers{
 	}
 	public static void main(String[] args) {
 
-    Board field;
+    Board field=new Board();
 		int x = 10;
 		int y = 10;
 
