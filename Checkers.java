@@ -65,6 +65,8 @@ public class Checkers{
             terminal.applyBackgroundColor(Terminal.Color.RED);
             terminal.applySGR(Terminal.SGR.ENTER_BOLD);
             terminal.putCharacter(' ');
+            terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+      			terminal.applyForegroundColor(Terminal.Color.DEFAULT);
           }
           if(!field.getSquare(r-4,c-5).isRed())
           {
@@ -72,6 +74,8 @@ public class Checkers{
             terminal.applyBackgroundColor(Terminal.Color.BLACK);
             terminal.applySGR(Terminal.SGR.ENTER_BOLD);
             terminal.putCharacter(' ');
+            terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+      			terminal.applyForegroundColor(Terminal.Color.DEFAULT);
           }
         }
       }
