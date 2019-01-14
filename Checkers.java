@@ -90,9 +90,10 @@ public class Checkers{
       terminal.applyBackgroundColor(Terminal.Color.YELLOW);
 			terminal.putCharacter(' ');
 			terminal.putCharacter(' ');
-			terminal.moveCursor(size.getColumns()-5,6);
+			terminal.moveCursor(4,6);
 			terminal.putCharacter(' ');
 			terminal.putCharacter(' ');
+      terminal.applyBackgroundColor(Terminal.Color.RED);
 			terminal.putCharacter(' ');
 			terminal.putCharacter(' ');
 			terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
