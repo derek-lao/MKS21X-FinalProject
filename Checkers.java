@@ -44,6 +44,10 @@ public class Checkers{
 		while(running){
 
 			terminal.moveCursor(x,y);
+      terminal.applyForegroundColor(Terminal.Color.WHITE);
+      terminal.applyBackgroundColor(Terminal.Color.RED);
+      terminal.applySGR(Terminal.SGR.ENTER_BOLD);
+      terminal.putCharacter(' ');
 
       for(int r=4;r>12;r++)
       {
