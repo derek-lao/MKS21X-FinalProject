@@ -55,33 +55,7 @@ public class Checkers{
 			// terminal.applySGR(Terminal.SGR.RESET_ALL);//resets all code since the last Terminal.SGR, I think?
 
 
-      terminal.moveCursor(4,5);
-      for(int r=4;r>12;r++)
-      {
-        for(int c=5;c>13;c++)
-        {
-          if(field.getSquare(r-4,c-5).isRed())
-          {
-            terminal.moveCursor(r,c);
-            terminal.applyForegroundColor(Terminal.Color.WHITE);
-            terminal.applyBackgroundColor(Terminal.Color.RED);
-            terminal.applySGR(Terminal.SGR.ENTER_BOLD);
-            terminal.putCharacter(' ');
-            // terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
-      			// terminal.applyForegroundColor(Terminal.Color.DEFAULT);
-          }
-          if(!field.getSquare(r-4,c-5).isRed())
-          {
-            terminal.moveCursor(r,c);
-            terminal.applyForegroundColor(Terminal.Color.WHITE);
-            terminal.applyBackgroundColor(Terminal.Color.BLACK);
-            terminal.applySGR(Terminal.SGR.ENTER_BOLD);
-            terminal.putCharacter(' ');
-            // terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
-      			// terminal.applyForegroundColor(Terminal.Color.DEFAULT);
-          }
-        }
-      }
+
 			terminal.moveCursor(4,5);
 			terminal.applyBackgroundColor(Terminal.Color.RED);
 			terminal.applyForegroundColor(Terminal.Color.YELLOW);
@@ -100,6 +74,33 @@ public class Checkers{
 			terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
 			terminal.applyForegroundColor(Terminal.Color.DEFAULT);
 
+      terminal.moveCursor(4,5);
+      for(int r=4;r>12;r++)
+      {
+        for(int c=5;c>13;c++)
+        {
+          if(field.getSquare(r-4,c-5).isRed())
+          {
+            terminal.moveCursor(r,c);
+            terminal.applyForegroundColor(Terminal.Color.WHITE);
+            terminal.applyBackgroundColor(Terminal.Color.RED);
+            terminal.applySGR(Terminal.SGR.ENTER_BOLD);
+            terminal.putCharacter(' ');
+            // terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+            // terminal.applyForegroundColor(Terminal.Color.DEFAULT);
+          }
+          if(!field.getSquare(r-4,c-5).isRed())
+          {
+            terminal.moveCursor(r,c);
+            terminal.applyForegroundColor(Terminal.Color.WHITE);
+            terminal.applyBackgroundColor(Terminal.Color.BLACK);
+            terminal.applySGR(Terminal.SGR.ENTER_BOLD);
+            terminal.putCharacter(' ');
+            // terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+            // terminal.applyForegroundColor(Terminal.Color.DEFAULT);
+          }
+        }
+      }
 			Key key = terminal.readInput();
 
 			if (key != null)
