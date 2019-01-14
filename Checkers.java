@@ -26,7 +26,7 @@ public class Checkers{
 	public static void main(String[] args) {
 
     Board field=new Board();
-    field.setup()
+    field.setup();
 		int x = 4;
 		int y = 5;
 
