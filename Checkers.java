@@ -22,7 +22,7 @@ public class Checkers{
     black=new Player(field,false,false);
     field=new Board();
   }
-  
+
 
 
   public static void putString(int r, int c,Terminal t, String s){
@@ -35,6 +35,7 @@ public class Checkers{
 
     Board field=new Board();
     field.setup();
+    field.getSquare(0,5).piece.move(field.getSquare(1,4));
 		int x = 4;
 		int y = 5;
 
@@ -106,6 +107,10 @@ public class Checkers{
 					running = false;
 				}
 
+        if(key.getKind() == Key.Kind.Enter)
+        {
+
+        }
 				if (key.getKind() == Key.Kind.ArrowLeft) {
 					terminal.moveCursor(x,y);
 					terminal.putCharacter(' ');
