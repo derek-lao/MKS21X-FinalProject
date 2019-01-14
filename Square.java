@@ -51,4 +51,16 @@ public class Square{
   public void setSquare4(Square four){
     square4=four;
   }
+  public void getSquare1(){
+    return square1;
+  }
+  public void getSquare2(){
+    return square2;
+  }
+  public void getSquare3(){
+    return square3;
+  }
+  public void getSquare4(){
+    return square4;
+  }
 }

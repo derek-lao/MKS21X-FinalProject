@@ -17,7 +17,14 @@ public class Piece{
   public Square getPosition(){
     return position;
   }
-  public boolean move(int directon){
-    if(position)
+  public boolean move(Square target){
+    if(target==position.square1||target==position.square2||
+    target==position.square3||target==position.square4)
+    {
+      if(target.isOccupied()==false)
+      {
+        
+      }
+    }
   }
 }
