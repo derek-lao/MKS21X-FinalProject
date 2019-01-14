@@ -75,6 +75,7 @@ public class Checkers{
 			terminal.applyForegroundColor(Terminal.Color.DEFAULT);
 
       terminal.moveCursor(4,5);
+      terminal.applyBackgroundColor(BLACK);
       for(int r=4;r>12;r++)
       {
         for(int c=5;c>13;c++)
