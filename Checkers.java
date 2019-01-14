@@ -73,13 +73,13 @@ public class Checkers{
             // terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
             // terminal.applyForegroundColor(Terminal.Color.DEFAULT);
           }
-          if(field.getSquare(r-4,c-5).isOccupied()&&field.getSquare(r-4,c-5).piece.isRed())
+          if(field.getSquare(r-4,c-5).isOccupied()&&field.getSquare(r-4,c-5).piece.colorRed)
           {
             terminal.moveCursor(r,c);
             terminal.applyForegroundColor(Terminal.Color.RED);
             terminal.putCharacter('\u25cf');
           }
-          if(field.getSquare(r-4,c-5).isOccupied()&&!field.getSquare(r-4,c-5).piece.isRed())
+          if(field.getSquare(r-4,c-5).isOccupied()&&!field.getSquare(r-4,c-5).piece.colorRed)
           {
             terminal.moveCursor(r,c);
             terminal.applyForegroundColor(Terminal.Color.MAGENTA);
