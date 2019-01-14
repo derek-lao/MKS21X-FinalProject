@@ -26,8 +26,9 @@ public class Checkers{
 	public static void main(String[] args) {
 
     Board field=new Board();
-		int x = 10;
-		int y = 10;
+    field.setup()
+		int x = 4;
+		int y = 5;
 
 		Terminal terminal = TerminalFacade.createTextTerminal();
 		terminal.enterPrivateMode();
@@ -53,9 +54,6 @@ public class Checkers{
 			// terminal.applyForegroundColor(Terminal.Color.GREEN);
 			// terminal.applySGR(Terminal.SGR.RESET_ALL);//resets all code since the last Terminal.SGR, I think?
 
-      field.setup();
-      x=4;
-      y=5;
       terminal.moveCursor(4,5);
       for(int r=4;r>12;r++)
       {
@@ -66,7 +64,7 @@ public class Checkers{
           {
             terminal.applyBackgroundColor(Terminal.Color.RED);
           }
-          if(field.getSquare(r-4,c-5).isRed())
+          if(!field.getSquare(r-4,c-5).isRed())
           {
             terminal.applyBackgroundColor(Terminal.Color.CYAN);
           }
