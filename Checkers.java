@@ -36,13 +36,9 @@ public class Checkers{
     Board field=new Board();
     // set of moves
     field.setup();
-    field.getSquare(0,5).piece.move(field.getSquare(1,4));
-    field.getSquare(3,2).piece.move(field.getSquare(2,3));
-    field.getSquare(1,4).piece.move(field.getSquare(0,3));
-    field.getSquare(2,3).piece.move(field.getSquare(1,4));
-    field.getSquare(1,6).piece.move(field.getSquare(0,5));
-    field.getSquare(2,1).piece.move(field.getSquare(3,2));
-    field.getSquare(0,5).piece.capture(field.getSquare(1,4).piece);
+    field.getSquare(4,5).piece.move(field.getSquare(5,4));
+    field.getSquare(3,2).piece.move(field.getSquare(4,3));
+    // field.getSquare(0,5).piece.capture(field.getSquare(1,4).piece);
     // field.getSquare(1,4).piece.capture(field.getSquare(2,3).piece);
 		int x = 4;
 		int y = 5;
