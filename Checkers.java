@@ -87,7 +87,8 @@ public class Checkers{
 			terminal.applySGR(Terminal.SGR.ENTER_BOLD);
 			terminal.putCharacter(' ');
 			terminal.putCharacter(' ');
-			terminal.putCharacter('\u262d');
+      terminal.applyBackgroundColor(Terminal.Color.YELLOW);
+			terminal.putCharacter(' ');
 			terminal.putCharacter(' ');
 			terminal.moveCursor(size.getColumns()-5,6);
 			terminal.putCharacter(' ');
