@@ -54,7 +54,7 @@ public class Checkers{
 			// terminal.applyForegroundColor(Terminal.Color.GREEN);
 			// terminal.applySGR(Terminal.SGR.RESET_ALL);//resets all code since the last Terminal.SGR, I think?
 
-      terminal.moveCursor(4,5);
+
       for(int r=4;r>12;r++)
       {
         for(int c=4;c>13;c++)
