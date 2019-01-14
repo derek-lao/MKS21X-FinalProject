@@ -104,4 +104,8 @@ public class Piece{
     return false;
   }
 
+  public void becomeKing(){
+    if(colorRed && !king && position.getY()==0) king=true;
+    if(!colorRed && !king && position.getY()==7) king=true;
+  }
 }
