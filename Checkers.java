@@ -50,8 +50,10 @@ public class Checkers{
       for(int i=0;i<5;i++)
       {
         for(int n=0;n<5;n++)
-        terminal.moveCursor(n,i);
-        terminal.putCharacter(' ');
+        {
+          terminal.moveCursor(n,i);
+          terminal.putCharacter(' ');
+        }
       }
 
 
