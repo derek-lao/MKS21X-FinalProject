@@ -14,6 +14,9 @@ import com.googlecode.lanterna.input.KeyMappingProfile;
 
 
 public class Checkers{
+  Player red,black;
+  Board field;
+
   public static void putString(int r, int c,Terminal t, String s){
 		t.moveCursor(r,c);
 		for(int i = 0; i < s.length();i++){
@@ -22,7 +25,7 @@ public class Checkers{
 	}
 	public static void main(String[] args) {
 
-
+    Board field;
 		int x = 10;
 		int y = 10;
 
@@ -50,8 +53,26 @@ public class Checkers{
 			terminal.applyForegroundColor(Terminal.Color.GREEN);
 			terminal.applySGR(Terminal.SGR.RESET_ALL);//resets all code since the last Terminal.SGR, I think?
 
-
-			terminal.moveCursor(size.getColumns()-5,5);
+      field.setup();
+      x=4;
+      y=5;
+      terminal.moveCursor(x,y);
+      for(int r=x;r>12;r++)
+      {
+        for(int c=y;c>13;c++)
+        {
+          terminal.moveCursor(r,c);
+          if(field.getSquare(r-4,c-5).isRed())
+          {
+            terminal.applyBackgroundColor(Terminal.Color.RED);
+          }
+          if(field.getSquare(r-4,c-5).isRed())
+          {
+            terminal.applyBackgroundColor(Terminal.Color.GRAY);
+          }
+        }
+      }
+			terminal.moveCursor(4,5);
 			terminal.applyBackgroundColor(Terminal.Color.RED);
 			terminal.applyForegroundColor(Terminal.Color.YELLOW);
 			terminal.applySGR(Terminal.SGR.ENTER_BOLD);
