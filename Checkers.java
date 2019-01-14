@@ -44,8 +44,8 @@ public class Checkers{
 		while(running){
 
 			terminal.moveCursor(x,y);
-      terminal.applyForegroundColor(Terminal.Color.WHITE);
-      terminal.applyBackgroundColor(Terminal.Color.RED);
+      terminal.applyForegroundColor(Terminal.Color.DEFAULT);
+      terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
       terminal.applySGR(Terminal.SGR.ENTER_BOLD);
 
       for(int r=4;r<12;r++)
@@ -65,10 +65,10 @@ public class Checkers{
           if(!field.getSquare(r-4,c-5).isRed())
           {
             terminal.moveCursor(r,c);
-            terminal.applyForegroundColor(Terminal.Color.WHITE);
+            terminal.applyForegroundColor(Terminal.Color.RED);
             terminal.applyBackgroundColor(Terminal.Color.BLACK);
             terminal.applySGR(Terminal.SGR.ENTER_BOLD);
-            terminal.putCharacter(' ');
+            terminal.putCharacter('\u25cf');
             // terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
             // terminal.applyForegroundColor(Terminal.Color.DEFAULT);
           }
