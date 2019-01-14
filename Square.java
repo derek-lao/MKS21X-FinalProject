@@ -38,12 +38,10 @@ public class Square{
     if(piece!=null)
     {
       piece=warrior;
-      occupied=true;
     }
     else
     {
       piece=null;
-      occupied=false;
     }
   }
 
