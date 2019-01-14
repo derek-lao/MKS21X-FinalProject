@@ -82,7 +82,7 @@ public class Board{
           field[y][x].setSquare1(field[y-1][x+1]);
           field[y][x].setSquare2(field[y-1][x-1]);
           field[y][x].setSquare3(field[y+1][x-1]);
-          field[y][x].setSquare3(field[y+1][x+1]);
+          field[y][x].setSquare4(field[y+1][x+1]);
         }
       }
     }
