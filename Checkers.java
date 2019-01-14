@@ -47,18 +47,10 @@ public class Checkers{
       terminal.applyForegroundColor(Terminal.Color.WHITE);
       terminal.applyBackgroundColor(Terminal.Color.RED);
       terminal.applySGR(Terminal.SGR.ENTER_BOLD);
-      if(field.getSquare(0,0).isRed())
-      {
-        terminal.putCharacter(' ');
-      }
-      if(!field.getSquare(0,0).isRed())
-      {
-        terminal.putCharacter('H');
-      }
 
-      for(int r=4;r>12;r++)
+      for(int r=4;r<12;r++)
       {
-        for(int c=5;c>13;c++)
+        for(int c=5;c<13;c++)
         {
           if(field.getSquare(r-4,c-5).isRed())
           {
