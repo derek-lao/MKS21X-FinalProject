@@ -56,8 +56,8 @@ public class Checkers{
           if(field.getSquare(r-4,c-5).isRed())
           {
             terminal.moveCursor(r,c);
-            terminal.applyForegroundColor(Terminal.Color.BLACK);
-            terminal.applyBackgroundColor(Terminal.Color.WHITE);
+            terminal.applyForegroundColor(Terminal.Color.WHITE);
+            terminal.applyBackgroundColor(Terminal.Color.RED);
             terminal.applySGR(Terminal.SGR.ENTER_BOLD);
             terminal.putCharacter(' ');
             // terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
@@ -69,9 +69,21 @@ public class Checkers{
             terminal.applyForegroundColor(Terminal.Color.RED);
             terminal.applyBackgroundColor(Terminal.Color.BLACK);
             terminal.applySGR(Terminal.SGR.ENTER_BOLD);
-            terminal.putCharacter('\u25cf');
+            terminal.putCharacter(' ');
             // terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
             // terminal.applyForegroundColor(Terminal.Color.DEFAULT);
+          }
+          if(field.getSquare(r-4,c-5).isOccupied()&&field.getSquare(r-4,c-5).piece.isRed())
+          {
+            terminal.moveCursor(r,c);
+            terminal.applyForegroundColor(Terminal.Color.RED);
+            terminal.putCharacter('\u25cf');
+          }
+          if(field.getSquare(r-4,c-5).isOccupied()&&!field.getSquare(r-4,c-5).piece.isRed())
+          {
+            terminal.moveCursor(r,c);
+            terminal.applyForegroundColor(Terminal.Color.MAGENTA);
+            terminal.putCharacter('\u25cf');
           }
         }
       }
