@@ -14,8 +14,55 @@ import com.googlecode.lanterna.input.KeyMappingProfile;
 
 
 public class Checkers{
-  Player red,black;
-  Board field;
+  public Player red,black;
+  public Board field;
+
+  public Checkers(){
+    red=new Player(field,true,true);
+    black=new Player(field,false,false);
+    field=new Board();
+  }
+
+  public void setup(){
+    for(int r=4;r<12;r++)
+    {
+      for(int c=5;c<13;c++)
+      {
+        if(field.getSquare(r-4,c-5).isRed())
+        {
+          terminal.moveCursor(r,c);
+          terminal.applyForegroundColor(Terminal.Color.WHITE);
+          terminal.applyBackgroundColor(Terminal.Color.RED);
+          terminal.applySGR(Terminal.SGR.ENTER_BOLD);
+          terminal.putCharacter(' ');
+          // terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+          // terminal.applyForegroundColor(Terminal.Color.DEFAULT);
+        }
+        if(!field.getSquare(r-4,c-5).isRed())
+        {
+          terminal.moveCursor(r,c);
+          terminal.applyForegroundColor(Terminal.Color.RED);
+          terminal.applyBackgroundColor(Terminal.Color.BLACK);
+          terminal.applySGR(Terminal.SGR.ENTER_BOLD);
+          terminal.putCharacter(' ');
+          // terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+          // terminal.applyForegroundColor(Terminal.Color.DEFAULT);
+        }
+        if(field.getSquare(r-4,c-5).isOccupied()&&field.getSquare(r-4,c-5).piece.colorRed)
+        {
+          terminal.moveCursor(r,c);
+          terminal.applyForegroundColor(Terminal.Color.RED);
+          terminal.putCharacter('\u25cf');
+        }
+        if(field.getSquare(r-4,c-5).isOccupied()&&!field.getSquare(r-4,c-5).piece.colorRed)
+        {
+          terminal.moveCursor(r,c);
+          terminal.applyForegroundColor(Terminal.Color.MAGENTA);
+          terminal.putCharacter('\u25cf');
+        }
+      }
+    }
+  }
 
   public static void putString(int r, int c,Terminal t, String s){
 		t.moveCursor(r,c);
@@ -25,10 +72,10 @@ public class Checkers{
 	}
 	public static void main(String[] args) {
 
-    Board field=new Board();
-    field.setup();
+    Checkers game = new Checkers();
 		int x = 4;
 		int y = 5;
+    game.setup();
 
 		Terminal terminal = TerminalFacade.createTextTerminal();
 		terminal.enterPrivateMode();
