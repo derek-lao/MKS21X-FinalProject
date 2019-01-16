@@ -38,8 +38,9 @@ public class Checkers{
     field.setup();
     field.getSquare(4,5).piece.move(field.getSquare(5,4));
     field.getSquare(3,2).piece.move(field.getSquare(4,3));
+    // field.getSquare(4,3).piece.move(field.getSquare(3,2));
     field.getSquare(5,4).piece.capture(field.getSquare(4,3).piece);
-    // field.getSquare(4,1).piece.capture(field.getSquare(3,2).piece);
+    field.getSquare(4,1).piece.capture(field.getSquare(3,2).piece);
     // field.getSquare(0,5).piece.capture(field.getSquare(1,4).piece);
     // field.getSquare(1,4).piece.capture(field.getSquare(2,3).piece);
 		int x = 4;

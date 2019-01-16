@@ -31,7 +31,7 @@ public class Piece{
   public boolean move(Square target){
     Square move1=position.getSquare1();
     Square move2=position.getSquare2();
-    Square move3=position.getSquare3();
+    Square move3=position.getSquare3();getSquare1
     Square move4=position.getSquare4();
     if(target!=null&&(target==move1||target==move2||
     target==move3||target==move4)&&target.isOccupied()==false)
@@ -69,6 +69,9 @@ public class Piece{
     Piece cap2=position.getSquare2().piece;
     Piece cap3=position.getSquare3().piece;
     Piece cap4=position.getSquare4().piece;
+    System.out.println(position);
+    System.out.println(position.getSquare1());
+    System.out.println(position.getSquare1().getSquare1());
     Square capture1=position.getSquare1().getSquare1();
     Square capture2=position.getSquare2().getSquare2();
     Square capture3=position.getSquare3().getSquare3();
