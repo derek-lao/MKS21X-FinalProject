@@ -39,14 +39,14 @@ public class Checkers{
     field.getSquare(4,5).piece.move(field.getSquare(5,4));
     field.getSquare(3,2).piece.move(field.getSquare(4,3));
     field.getSquare(5,4).piece.capture(field.getSquare(4,3).piece);
-    field.getSquare(4,1).piece.capture(field.getSquare(3,2).piece);
+    // field.getSquare(4,1).piece.capture(field.getSquare(3,2).piece);
     // field.getSquare(0,5).piece.capture(field.getSquare(1,4).piece);
     // field.getSquare(1,4).piece.capture(field.getSquare(2,3).piece);
 		int x = 4;
 		int y = 5;
 
 		Terminal terminal = TerminalFacade.createTextTerminal();
-    Screen screen=new Screen(terminal);
+    // Screen screen=new Screen(terminal);
 		terminal.enterPrivateMode();
 
 		TerminalSize size = terminal.getTerminalSize();
@@ -161,6 +161,6 @@ public class Checkers{
 
 
 		}
-    screen.refresh();
+    // screen.refresh();
 	}
 }
