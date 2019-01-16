@@ -46,6 +46,7 @@ public class Checkers{
 		int y = 5;
 
 		Terminal terminal = TerminalFacade.createTextTerminal();
+    Screen screen=new Screen(terminal);
 		terminal.enterPrivateMode();
 
 		TerminalSize size = terminal.getTerminalSize();
@@ -160,5 +161,6 @@ public class Checkers{
 
 
 		}
+    screen.refresh();
 	}
 }
