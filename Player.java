@@ -11,59 +11,94 @@ public class Player{
   public boolean move(Piece warrior,Square target){
     if(warrior!=null && !target.isOccupied() && !target.isRed())
     {
-      if(warrior.king)
+      Square now=warrior.getPosition();
+      int nowX=now.getX();
+      int nowY=now.getY();
+      Square square1=field.getSquare(nowX+1,nowY-1);
+      Square square2=field.getSquare(nowX-1,nowY-1);
+      Square square3=field.getSquare(nowX-1,nowY+1);
+      Square square4=field.getSquare(nowX+1,nowY+1);
+      if(
+      (warrior.king&&(
+      target==square1||
+      target==square2||
+      target==square3||
+      target==square4))     ||
+      (!warrior.king&&(
+      target==square1||
+      target==square2
+      ))
+      )
       {
-        
-      }
-    }
-  }
-  public boolean capture(Piece captive){
-    Piece cap1=position.getSquare1().piece;
-    Piece cap2=position.getSquare2().piece;
-    Piece cap3=position.getSquare3().piece;
-    Piece cap4=position.getSquare4().piece;
-    System.out.println(position);
-    System.out.println(position.getSquare1());
-    System.out.println(position.getSquare1().getSquare1());
-    Square capture1=position.getSquare1().getSquare1();
-    Square capture2=position.getSquare2().getSquare2();
-    Square capture3=position.getSquare3().getSquare3();
-    Square capture4=position.getSquare4().getSquare4();
-    boolean status1= !capture1.isOccupied();
-    boolean status2= !capture2.isOccupied();
-    boolean status3= !capture3.isOccupied();
-    boolean status4= !capture4.isOccupied();
-    if(captive!=null&&captive.colorRed!=this.colorRed&&
-    (captive==cap1||captive==cap2||captive==cap3||captive==cap4)&&
-    (capture1!=null||capture2!=null||capture3!=null||capture4!=null)&&
-    (status1||status2||status3||status4))
-    {
-      if(this.king)
-      {
-        if(captive==cap1) this.motion(capture1);
-        if(captive==cap2) this.motion(capture2);
-        if(captive==cap3) this.motion(capture3);
-        if(captive==cap4) this.motion(capture4);
-        captive.getPosition().piece=null;
-        captive.setPosition(null);
+        warrior.motion(target);
         return true;
       }
       else
       {
-        if(colorRed&&(captive==cap1||captive==cap2))
+        return false;
+      }
+    }
+    else
+    {
+      return false;
+    }
+  }
+
+  public boolean capture(Piece warrior,Square target){
+    // this checks if the piece being moved is valid, and if the target square is valid
+    if(warrior!=null && !target.isOccupied() && !target.isRed())
+    {
+      Square now=warrior.getPosition();
+      int nowX=now.getX();
+      int nowY=now.getY();
+      Square cap1=field.getSquare(nowX+1,nowY-1);
+      Square cap2=field.getSquare(nowX-1,nowY-1);
+      Square cap3=field.getSquare(nowX-1,nowY+1);
+      Square cap4=field.getSquare(nowX+1,nowY+1);
+      Piece captive1=cap1.piece;
+      Piece captive2=cap2.piece;
+      Piece captive3=cap3.piece;
+      Piece captive4=cap4.piece;
+      Square square1=field.getSquare(nowX+2,nowY-2);
+      Square square2=field.getSquare(nowX-2,nowY-2);
+      Square square3=field.getSquare(nowX-2,nowY+2);
+      Square square4=field.getSquare(nowX+2,nowY+2);
+      // this checks if the piece movement adheres to its king or not-king restrictions
+      if(
+      (warrior.king&&(
+      target==square1||
+      target==square2||
+      target==square3||
+      target==square4))     ||
+      (!warrior.king&&(
+      target==square1||
+      target==square2
+      ))
+      )
+      {
+        // this checks if the piece being captured is valid
+        if(target==square1 && captive1!=null && captive1.colorRed!=warrior.colorRed)
         {
-          if(captive==cap1) this.motion(capture1);
-          if(captive==cap2) this.motion(capture2);
-          captive.getPosition().piece=null;
-          captive.setPosition(null);
+          warrior.motion(target);
+          warrior.kill(captive1);
           return true;
         }
-        if(!colorRed&&(captive==cap3||captive==cap4))
+        if(target==square2 && captive2!=null && captive2.colorRed!=warrior.colorRed)
         {
-          if(captive==cap3) this.motion(capture3);
-          if(captive==cap4) this.motion(capture4);
-          captive.getPosition().piece=null;
-          captive.setPosition(null);
+          warrior.motion(target);
+          warrior.kill(captive2);
+          return true;
+        }
+        if(target==square3 && captive3!=null && captive3.colorRed!=warrior.colorRed)
+        {
+          warrior.motion(target);
+          warrior.kill(captive3);
+          return true;
+        }
+        if(target==square4 && captive4!=null && captive4.colorRed!=warrior.colorRed)
+        {
+          warrior.motion(target);
+          warrior.kill(captive4);
           return true;
         }
         else
@@ -71,8 +106,15 @@ public class Player{
           return false;
         }
       }
+      else
+      {
+        return false;
+      }
     }
-    return false;
+    else
+    {
+      return false;
+    }
   }
   // public boolean move(Piece soldier, Square target){
   //   if(myTurn&&soldier.colorRed==this.colorRed&&soldier.move(target))

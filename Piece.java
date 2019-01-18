@@ -27,6 +27,10 @@ public class Piece{
     position=target;
     target.setPiece(this);
   }
+  public void kill(Piece captive){
+    captive.position.setPiece(null);
+    captive=null;
+  }
 
   // public boolean move(Square target){
   //   Square move1=position.getSquare1();
