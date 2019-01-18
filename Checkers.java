@@ -40,11 +40,11 @@ public class Checkers{
     // set of moves
     field.setup();
     red.move(field.getSquare(4,5).piece,field.getSquare(5,4));
-    // black.move(field.getSquare(3,2).piece,field.getSquare(4,3));
-    black.move(field.getSquare(7,2).piece,field.getSquare(6,3));
-    black.capture(field.getSquare(6,3).piece,field.getSquare(4,5));
-    // red.capture(field.getSquare(5,4).piece,field.getSquare(3,2));// the working capture statement thus far
-    // black.capture(field.getSquare(2,1).piece,field.getSquare(4,3));
+    black.move(field.getSquare(3,2).piece,field.getSquare(4,3));
+    // black.move(field.getSquare(7,2).piece,field.getSquare(6,3));
+    // black.capture(field.getSquare(6,3).piece,field.getSquare(4,5));
+    red.capture(field.getSquare(5,4).piece,field.getSquare(3,2));// the working capture statement thus far
+    black.capture(field.getSquare(2,1).piece,field.getSquare(4,3));
     // field.getSquare(0,5).piece.capture(field.getSquare(1,4).piece);
     // field.getSquare(1,4).piece.capture(field.getSquare(2,3).piece);
 		int x = 4;
