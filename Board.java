@@ -12,7 +12,7 @@ public class Board{
   * clears the board by creating a new checkered board
   */
   public void clear(){
-    field=new Square[8][8];
+    field=new Square[9][9];
     for(int y=0;y<8;y+=2)
     {
       for(int x=0;x<8;x+=2)
