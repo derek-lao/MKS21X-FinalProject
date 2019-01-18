@@ -19,11 +19,11 @@ public class Player{
       Square square2=field.getSquare(nowX-1,nowY-1);
       Square square3=field.getSquare(nowX-1,nowY+1);
       Square square4=field.getSquare(nowX+1,nowY+1);
-      // System.out.println(square1);
-      // System.out.println(square2);
-      // System.out.println(square3);
-      // System.out.println(square4);
-      // System.out.println();
+      System.out.println(square1);
+      System.out.println(square2);
+      System.out.println(square3);
+      System.out.println(square4);
+      System.out.println();
       // this checks if the piece movement adheres to its king or not-king restrictions
       if(
       (warrior.king&&(
@@ -66,27 +66,27 @@ public class Player{
       Square square2=field.getSquare(nowX-2,nowY-2);
       Square square3=field.getSquare(nowX-2,nowY+2);
       Square square4=field.getSquare(nowX+2,nowY+2);
+      System.out.println(square1);
+      System.out.println(square2);
+      System.out.println(square3);
+      System.out.println(square4);
       Square cap1=field.getSquare(nowX+1,nowY-1);
       Square cap2=field.getSquare(nowX-1,nowY-1);
       Square cap3=field.getSquare(nowX-1,nowY+1);
       Square cap4=field.getSquare(nowX+1,nowY+1);
+      System.out.println(cap1);
+      System.out.println(cap2);
+      System.out.println(cap3);
+      System.out.println(cap4);
       Piece captive1=cap1.piece;
       Piece captive2=cap2.piece;
       Piece captive3=cap3.piece;
       Piece captive4=cap4.piece;
-      // System.out.println(square1);
-      // System.out.println(square2);
-      // System.out.println(square3);
-      // System.out.println(square4);
-      // System.out.println(cap1);
-      // System.out.println(cap2);
-      // System.out.println(cap3);
-      // System.out.println(cap4);
-      // System.out.println(captive1);
-      // System.out.println(captive2);
-      // System.out.println(captive3);
-      // System.out.println(captive4);
-      // System.out.println();
+      System.out.println(captive1);
+      System.out.println(captive2);
+      System.out.println(captive3);
+      System.out.println(captive4);
+      System.out.println();
       // this checks if the piece movement adheres to its king or not-king restrictions
       if(
       (warrior.king&&(

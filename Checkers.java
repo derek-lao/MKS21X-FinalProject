@@ -40,9 +40,10 @@ public class Checkers{
     // set of moves
     field.setup();
     red.move(field.getSquare(5,6).piece,field.getSquare(6,5));
-    black.move(field.getSquare(4,3).piece,field.getSquare(5,4));
-    red.capture(field.getSquare(6,5).piece,field.getSquare(4,3));// the working capture statement thus far
-    black.capture(field.getSquare(3,2).piece,field.getSquare(5,4));
+    red.move(field.getSquare(6,5).piece,field.getSquare(7,4));
+    black.capture(field.getSquare(8,3).piece,field.getSquare(6,5));
+    // red.capture(field.getSquare(6,5).piece,field.getSquare(4,3));// the working capture statement thus far
+    // black.capture(field.getSquare(3,2).piece,field.getSquare(5,4));
 		int x = 4;
 		int y = 5;
 
@@ -128,11 +129,11 @@ public class Checkers{
         if(key.getKind() == Key.Kind.Enter)
         {
           terminal.moveCursor(x,y);
-          int r=x;
-          int c=y;
+          r=x;
+          c=y;
           if(r>3 && r<12 && c>4 && c<13)
           {
-            field.getSquare(r,c)
+            field.getSquare(r,c);
           }
         }
 

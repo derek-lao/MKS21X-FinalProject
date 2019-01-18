@@ -12,27 +12,34 @@ public class Board{
   * clears the board by creating a new checkered board
   */
   public void clear(){
-    field=new Square[10][10];
-    for(int y=1;y<9;y+=2)
+    field=new Square[12][12];
+    for(int y=1;y<11;y++)
     {
-      for(int x=1;x<9;x+=2)
+      for(int x=1;x<11;x++)
       {
-        field[y][x]=new Square(x,y,true,null);
-      }
-      for(int x=2;x<9;x+=2)
-      {
-        field[y][x]=new Square(x,y,false,null);
+        field[y][x]=new Square(null);
       }
     }
-    for(int y=2;y<9;y+=2)
+    for(int y=2;y<10;y+=2)
     {
-      for(int x=1;x<9;x+=2)
+      for(int x=2;x<10;x+=2)
       {
-        field[y][x]=new Square(x,y,false,null);
+        field[y][x]=new Square(x-1,y-1,true,null);
       }
-      for(int x=2;x<9;x+=2)
+      for(int x=3;x<10;x+=2)
       {
-        field[y][x]=new Square(x,y,true,null);
+        field[y][x]=new Square(x-1,y-1,false,null);
+      }
+    }
+    for(int y=3;y<10;y+=2)
+    {
+      for(int x=2;x<10;x+=2)
+      {
+        field[y][x]=new Square(x-1,y-1,false,null);
+      }
+      for(int x=3;x<10;x+=2)
+      {
+        field[y][x]=new Square(x-1,y-1,true,null);
       }
     }
   }
@@ -42,9 +49,9 @@ public class Board{
   */
   public void setup(){
     clear(); // this prevents weird things from happening. It ensures all squares are correct
-    for(int y=1;y<4;y++)
+    for(int y=2;y<5;y++)
     {
-      for(int x=1;x<9;x++)
+      for(int x=2;x<10;x++)
       {
         if(!field[y][x].isRed())
         {
@@ -52,9 +59,9 @@ public class Board{
         }
       }
     }
-    for(int y=6;y<9;y++)
+    for(int y=7;y<10;y++)
     {
-      for(int x=1;x<9;x++)
+      for(int x=2;x<10;x++)
       {
         if(!field[y][x].isRed())
         {
@@ -65,7 +72,7 @@ public class Board{
   }
 
   public Square getSquare(int x,int y){
-    return field[y][x];
+    return field[y+1][x+1];
   }
   public static void main(String[] args){
     // // testing to make sure I have 8x8 board

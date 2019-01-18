@@ -16,6 +16,9 @@ public class Square{
     colorRed=red;
     piece=soldier;
   }
+  public Square(Piece soldier){
+    piece=soldier;
+  }
 
   public int getX(){
     return xcor;
