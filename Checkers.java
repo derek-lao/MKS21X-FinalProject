@@ -39,14 +39,10 @@ public class Checkers{
 
     // set of moves
     field.setup();
-    red.move(field.getSquare(4,5).piece,field.getSquare(5,4));
-    black.move(field.getSquare(3,2).piece,field.getSquare(4,3));
-    // black.move(field.getSquare(7,2).piece,field.getSquare(6,3));
-    // black.capture(field.getSquare(6,3).piece,field.getSquare(4,5));
-    red.capture(field.getSquare(5,4).piece,field.getSquare(3,2));// the working capture statement thus far
-    black.capture(field.getSquare(2,1).piece,field.getSquare(4,3));
-    // field.getSquare(0,5).piece.capture(field.getSquare(1,4).piece);
-    // field.getSquare(1,4).piece.capture(field.getSquare(2,3).piece);
+    red.move(field.getSquare(5,6).piece,field.getSquare(6,5));
+    black.move(field.getSquare(4,3).piece,field.getSquare(5,4));
+    red.capture(field.getSquare(6,5).piece,field.getSquare(4,3));// the working capture statement thus far
+    black.capture(field.getSquare(3,2).piece,field.getSquare(5,4));
 		int x = 4;
 		int y = 5;
 
@@ -68,7 +64,7 @@ public class Checkers{
       {
         for(int c=5;c<13;c++)
         {
-          if(field.getSquare(r-4,c-5).isRed())
+          if(field.getSquare(r-3,c-4).isRed())
           {
             terminal.moveCursor(r,c);
             terminal.applyForegroundColor(Terminal.Color.WHITE);
@@ -78,7 +74,7 @@ public class Checkers{
             // terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
             // terminal.applyForegroundColor(Terminal.Color.DEFAULT);
           }
-          if(!field.getSquare(r-4,c-5).isRed())
+          if(!field.getSquare(r-3,c-4).isRed())
           {
             terminal.moveCursor(r,c);
             terminal.applyForegroundColor(Terminal.Color.RED);
@@ -88,13 +84,13 @@ public class Checkers{
             // terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
             // terminal.applyForegroundColor(Terminal.Color.DEFAULT);
           }
-          if(field.getSquare(r-4,c-5).isOccupied()&&field.getSquare(r-4,c-5).piece.colorRed)
+          if(field.getSquare(r-3,c-4).isOccupied()&&field.getSquare(r-3,c-4).piece.colorRed)
           {
             terminal.moveCursor(r,c);
             terminal.applyForegroundColor(Terminal.Color.RED);
             terminal.putCharacter('\u25cf');
           }
-          if(field.getSquare(r-4,c-5).isOccupied()&&!field.getSquare(r-4,c-5).piece.colorRed)
+          if(field.getSquare(r-3,c-4).isOccupied()&&!field.getSquare(r-3,c-4).piece.colorRed)
           {
             terminal.moveCursor(r,c);
             terminal.applyForegroundColor(Terminal.Color.MAGENTA);
