@@ -9,7 +9,7 @@ public class Player{
   }
 
   public boolean move(Piece warrior,Square target){
-    if(warrior!=null && !target.isOccupied() && !target.isRed())
+    if(warrior!=null && warrior.colorRed==this.colorRed && !target.isOccupied() && !target.isRed())
     {
       Square now=warrior.getPosition();
       int nowX=now.getX();
@@ -48,8 +48,8 @@ public class Player{
 
   public boolean capture(Piece warrior,Square target){
     // this checks if the piece being moved is valid, and if the target square is valid
-    // System.out.println(warrior);
-    // System.out.println(target);
+    System.out.println(warrior);
+    System.out.println(target);
     if(warrior!=null && warrior.colorRed==this.colorRed && !target.isOccupied() && !target.isRed())
     {
       Square now=warrior.getPosition();
@@ -67,6 +67,7 @@ public class Player{
       Square square2=field.getSquare(nowX-2,nowY-2);
       Square square3=field.getSquare(nowX-2,nowY+2);
       Square square4=field.getSquare(nowX+2,nowY+2);
+      System.out.println(cap2);
       // this checks if the piece movement adheres to its king or not-king restrictions
       if(
       (warrior.king&&(
@@ -91,7 +92,7 @@ public class Player{
         }
         if(target==square2 && captive2!=null && captive2.colorRed!=warrior.colorRed)
         {
-          System.out.println(cap2);
+          // System.out.println(cap2);
           // System.out.println(captive2);
           warrior.motion(target);
           warrior.kill(captive2);
