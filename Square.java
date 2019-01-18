@@ -1,7 +1,6 @@
 public class Square{
   private int xcor, ycor;
   private boolean colorRed;
-  private Square square1,square2,square3,square4;
   public Piece piece;
 
   //constructor
@@ -38,28 +37,4 @@ public class Square{
     piece=warrior;
   }
 
-  public void setSquare1(Square one){
-    square1=one;
-  }
-  public void setSquare2(Square two){
-    square2=two;
-  }
-  public void setSquare3(Square three){
-    square3=three;
-  }
-  public void setSquare4(Square four){
-    square4=four;
-  }
-  public Square getSquare1(){
-    return square1;
-  }
-  public Square getSquare2(){
-    return square2;
-  }
-  public Square getSquare3(){
-    return square3;
-  }
-  public Square getSquare4(){
-    return square4;
-  }
 }
