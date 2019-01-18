@@ -91,7 +91,8 @@ public class Player{
         }
         if(target==square2 && captive2!=null && captive2.colorRed!=warrior.colorRed)
         {
-          System.out.println(captive2);
+          // System.out.println(cap2);
+          // System.out.println(captive2);
           warrior.motion(target);
           warrior.kill(captive2);
           return true;
