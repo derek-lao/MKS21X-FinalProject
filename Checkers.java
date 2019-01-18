@@ -40,7 +40,7 @@ public class Checkers{
     // set of moves
     field.setup();
     red.move(field.getSquare(4,5).piece,field.getSquare(5,4));
-    black.move(field.getSquare(3,2).piece,field.getSquare(4,3));
+    // black.move(field.getSquare(3,2).piece,field.getSquare(4,3));
     black.move(field.getSquare(7,2).piece,field.getSquare(6,3));
     // black.capture(field.getSquare(6,3).piece,field.getSquare(4,5));
     // red.capture(field.getSquare(5,4).piece,field.getSquare(3,2));// the working capture statement thus far
