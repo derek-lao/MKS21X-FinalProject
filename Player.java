@@ -48,7 +48,7 @@ public class Player{
 
   public boolean capture(Piece warrior,Square target){
     // this checks if the piece being moved is valid, and if the target square is valid
-    System.out.println(warrior);
+    // System.out.println(warrior);
     // System.out.println(target);
     if(warrior!=null && warrior.colorRed==this.colorRed && !target.isOccupied() && !target.isRed())
     {
@@ -79,6 +79,7 @@ public class Player{
       System.out.println(square2);
       System.out.println(square3);
       System.out.println(square4);
+      System.out.println();
       // this checks if the piece movement adheres to its king or not-king restrictions
       if(
       (warrior.king&&(
