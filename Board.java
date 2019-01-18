@@ -30,7 +30,7 @@ public class Board{
       {
         field[y][x]=new Square(x,y,false,null);
       }
-      for(int x=1;x<field[1].length;x+=2)
+      for(int x=1;x<8;x+=2)
       {
         field[y][x]=new Square(x,y,true,null);
       }
