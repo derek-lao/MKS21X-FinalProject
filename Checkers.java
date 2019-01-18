@@ -34,6 +34,9 @@ public class Checkers{
 	public static void main(String[] args) {
 
     Board field=new Board();
+    Player red=new Player(field,true,true);
+    Player black=new Player(field,false,false);
+
     // set of moves
     field.setup();
     red.move(field.getSquare(4,5).piece,field.getSquare(5,4));
