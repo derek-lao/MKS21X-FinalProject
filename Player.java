@@ -24,10 +24,12 @@ public class Player{
       target==square2||
       target==square3||
       target==square4))     ||
-      (!warrior.king&&(
+      (!warrior.king&&warrior.colorRed&&(
       target==square1||
-      target==square2
-      ))
+      target==square2))     ||
+      (!warrior.king&&!warrior.colorRed&&(
+      target==square3||
+      target==square4))
       )
       {
         warrior.motion(target);
@@ -46,7 +48,7 @@ public class Player{
 
   public boolean capture(Piece warrior,Square target){
     // this checks if the piece being moved is valid, and if the target square is valid
-    if(warrior!=null && !target.isOccupied() && !target.isRed())
+    if(warrior!=null && warrior.colorRed==this.colorRed && !target.isOccupied() && !target.isRed())
     {
       Square now=warrior.getPosition();
       int nowX=now.getX();
@@ -70,10 +72,12 @@ public class Player{
       target==square2||
       target==square3||
       target==square4))     ||
-      (!warrior.king&&(
+      (!warrior.king&&warrior.colorRed&&(
       target==square1||
-      target==square2
-      ))
+      target==square2))     ||
+      (!warrior.king&&!warrior.colorRed&&(
+      target==square3||
+      target==square4))
       )
       {
         // this checks if the piece being captured is valid
