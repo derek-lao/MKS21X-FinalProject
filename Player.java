@@ -4,8 +4,8 @@ public class Player{
 
   public Player(Board battlefield,boolean red,boolean turn){
     field=battlefield;
-    red=colorRed;
-    turn=myTurn;
+    colorRed=red;
+    myTurn=turn;
   }
 
   public boolean move(Piece warrior,Square target){
