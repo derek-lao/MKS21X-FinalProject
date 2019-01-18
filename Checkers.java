@@ -133,7 +133,11 @@ public class Checkers{
           c=y;
           if(r>3 && r<12 && c>4 && c<13)
           {
-            field.getSquare(r,c);
+            Square currentSquare=field.getSquare(r-3,c-4);
+            if(currentSquare.piece!=null)
+            {
+              Piece currentPiece=currentSquare.piece;
+            }
           }
         }
 
