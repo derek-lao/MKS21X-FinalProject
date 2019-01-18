@@ -9,6 +9,7 @@ public class Player{
   }
 
   public boolean move(Piece warrior,Square target){
+    System.out.println(warrior);
     if(warrior!=null && warrior.colorRed==this.colorRed && !target.isOccupied() && !target.isRed())
     {
       Square now=warrior.getPosition();
