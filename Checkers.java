@@ -114,6 +114,8 @@ public class Checkers{
 
 			Key key = terminal.readInput();
 
+      int r=x;
+      int c=y;
 			if (key != null)
 			{
 
@@ -123,12 +125,17 @@ public class Checkers{
 					running = false;
 				}
 
-        if(key.getKind() == Key.Kind.CursorLocation)
+        if(key.getKind() == Key.Kind.Enter)
         {
           terminal.moveCursor(x,y);
-          terminal.putCharacter('X');
-          x--;y--;
+          int r=x;
+          int c=y;
+          if(r>3 && r<12 && c>4 && c<13)
+          {
+            field.getSquare(r,c)
+          }
         }
+
 				if (key.getKind() == Key.Kind.ArrowLeft) {
 					terminal.moveCursor(x,y);
 					terminal.putCharacter(' ');
