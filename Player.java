@@ -18,6 +18,10 @@ public class Player{
       Square square2=field.getSquare(nowX-1,nowY-1);
       Square square3=field.getSquare(nowX-1,nowY+1);
       Square square4=field.getSquare(nowX+1,nowY+1);
+      System.out.println(square1);
+      System.out.println(square2);
+      System.out.println(square3);
+      System.out.println(square4);
       if(
       (warrior.king&&(
       target==square1||
