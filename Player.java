@@ -48,6 +48,8 @@ public class Player{
 
   public boolean capture(Piece warrior,Square target){
     // this checks if the piece being moved is valid, and if the target square is valid
+    System.out.println(warrior);
+    System.out.println(target);
     if(warrior!=null && warrior.colorRed==this.colorRed && !target.isOccupied() && !target.isRed())
     {
       Square now=warrior.getPosition();
