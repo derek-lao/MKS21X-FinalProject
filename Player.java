@@ -67,7 +67,7 @@ public class Player{
       Square square2=field.getSquare(nowX-2,nowY-2);
       Square square3=field.getSquare(nowX-2,nowY+2);
       Square square4=field.getSquare(nowX+2,nowY+2);
-      // System.out.println(cap2);
+      System.out.println(cap4);
       // this checks if the piece movement adheres to its king or not-king restrictions
       if(
       (warrior.king&&(
