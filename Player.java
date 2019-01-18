@@ -22,6 +22,7 @@ public class Player{
       System.out.println(square2);
       System.out.println(square3);
       System.out.println(square4);
+      System.out.println();
       if(
       (warrior.king&&(
       target==square1||
