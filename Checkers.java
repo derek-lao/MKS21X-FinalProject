@@ -60,6 +60,17 @@ public class Checkers{
 
 		while(running){
 
+      terminal.moveCursor(x,y);
+			terminal.applyBackgroundColor(Terminal.Color.RED);//cursor background color
+			terminal.applyForegroundColor(Terminal.Color.GREEN);//cursor foreground color
+			//applySGR(a,b) for multiple modifiers (bold,blink) etc.
+			terminal.applySGR(Terminal.SGR.ENTER_REVERSE );//underlines on bottom
+			terminal.applySGR(Terminal.SGR.ENTER_UNDERLINE);
+			terminal.putCharacter('\u00a4');//puts a character in place of the cursor
+			//terminal.putCharacter(' ');
+			terminal.applyBackgroundColor(Terminal.Color.RED);
+			terminal.applyForegroundColor(Terminal.Color.GREEN);
+			terminal.applySGR(Terminal.SGR.RESET_ALL);//resets all code since the last Terminal.SGR, I think?
       for(int r=4;r<12;r++)
       {
         for(int c=5;c<13;c++)
