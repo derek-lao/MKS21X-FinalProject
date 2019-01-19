@@ -10,7 +10,7 @@ public class Player{
 
   public boolean move(Piece warrior,Square target){
     // this checks if the piece being moved is valid, and if the target square is valid
-    if(!myturn) return false;
+    if(!myTurn) return false;
     if(warrior!=null && warrior.colorRed==this.colorRed && !target.isOccupied() && !target.isRed())
     {
       Square now=warrior.getPosition();
