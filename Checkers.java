@@ -154,7 +154,7 @@ public class Checkers{
             currentSquare=field.getSquare(x-3,y-4);
             if(turner.move(currentPiece,currentSquare))
             {
-              turner.move(currentPiece,currentSquare);
+              // turner.move(currentPiece,currentSquare);
               red.myTurn=!red.myTurn;
             }
             else
@@ -168,7 +168,7 @@ public class Checkers{
             currentSquare=field.getSquare(x-3,y-4);
             if(turner.capture(currentPiece,currentSquare))
             {
-              turner.capture(currentPiece,currentSquare);
+              // turner.capture(currentPiece,currentSquare);
               red.myTurn=!red.myTurn;
             }
             else
