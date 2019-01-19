@@ -143,9 +143,7 @@ public class Checkers{
           if(key.getKind()==Key.Kind.Enter)
           {
             terminal.moveCursor(x,y);
-            r=x;
-            c=y;
-            currentSquare=field.getSquare(r-3,c-4);
+            currentSquare=field.getSquare(x-3,y-4);
             if(currentSquare.piece!=null)
             {
               currentPiece=currentSquare.piece;
@@ -154,9 +152,14 @@ public class Checkers{
           if(key.getCharacter()=='m')
           {
             terminal.moveCursor(x,y);
-            r=x;
-            c=y;
+            currentSquare=field.getSquare(x-3,y-4);
             turner.move(currentPiece,currentSquare);
+          }
+          if(key.getCharacter()=='c')
+          {
+            terminal.moveCursor(x,y);
+            currentSquare=field.getSquare(x-3,y-4);
+            turner.capture(currentPiece,currentSquare);
           }
 
         }
