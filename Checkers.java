@@ -44,8 +44,8 @@ public class Checkers{
     field.setup();
     red.move(field.getSquare(5,6).piece,field.getSquare(6,5));
     red.move(field.getSquare(6,5).piece,field.getSquare(7,4));
-    black.capture(field.getSquare(8,3).piece,field.getSquare(6,5));
-    black.capture(field.getSquare(6,3).piece,field.getSquare(8,5));
+    black.capture(field.getSquare(8,3).piece,field.getSquare(6,5));//fail
+    // black.capture(field.getSquare(6,3).piece,field.getSquare(8,5));//fail
     // red.capture(field.getSquare(6,5).piece,field.getSquare(4,3));// the working capture statement thus far
     // black.capture(field.getSquare(3,2).piece,field.getSquare(5,4));
 		int x = 4;
