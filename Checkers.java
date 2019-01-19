@@ -36,7 +36,7 @@ public class Checkers{
     Board field=new Board();
     Player red=new Player(field,true,true);
     Player black=new Player(field,false,false);
-    Player turner;
+    Player turner=red;
 
 
 
