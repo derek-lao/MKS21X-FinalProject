@@ -37,14 +37,7 @@ public class Checkers{
     Player red=new Player(field,true,true);
     Player black=new Player(field,false,false);
     Player turner;
-    if(!red.myTurn)
-    {
-      turner=black;
-    }
-    if(red.myTurn)
-    {
-      turner=red;
-    }
+
 
 
     // set of moves
@@ -70,9 +63,14 @@ public class Checkers{
 		long lastSecond = 0;
 
 		while(running){
-
-
-
+      if(!red.myTurn)
+      {
+        turner=black;
+      }
+      if(red.myTurn)
+      {
+        turner=red;
+      }
       //code to create board, and set pieces
       for(int r=4;r<12;r++)
       {
@@ -153,13 +151,29 @@ public class Checkers{
           {
             terminal.moveCursor(x,y);
             currentSquare=field.getSquare(x-3,y-4);
-            turner.move(currentPiece,currentSquare);
+            if(turner.move(currentPiece,currentSquare))
+            {
+              turner.move(currentPiece,currentSquare);
+              red.myTurn=!red.myTurn;
+            }
+            else
+            {
+              putString(1,20,terminal,"Can't do that! Did something wrong with move.");
+            }
           }
           if(key.getCharacter()=='c')
           {
             terminal.moveCursor(x,y);
             currentSquare=field.getSquare(x-3,y-4);
-            turner.capture(currentPiece,currentSquare);
+            if(turner.capture(currentPiece,currentSquare))
+            {
+              turner.capture(currentPiece,currentSquare);
+              red.myTurn=!red.myTurn;
+            }
+            else
+            {
+              putString(1,20,terminal,"Can't do that! Did something wrong with capture.")
+            }
           }
 
         }
