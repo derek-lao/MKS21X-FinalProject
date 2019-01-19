@@ -64,14 +64,7 @@ public class Checkers{
 		long lastSecond = 0;
 
 		while(running){
-      if(!red.myTurn)
-      {
-        turner=black;
-      }
-      if(red.myTurn)
-      {
-        turner=red;
-      }
+
       //code to create board, and set pieces
       for(int r=4;r<12;r++)
       {
@@ -122,6 +115,16 @@ public class Checkers{
 			terminal.applyForegroundColor(Terminal.Color.GREEN);
 			terminal.applySGR(Terminal.SGR.RESET_ALL);//resets all code since the last Terminal.SGR, I think?
 
+      if(!red.myTurn)
+      {
+        turner=black;
+        putString(1,19,terminal,"Black to move");
+      }
+      if(red.myTurn)
+      {
+        turner=red;
+        putString(1,19,terminal,"Red to move");
+      }
 			Key key = terminal.readInput();
 
 			if (key != null)
