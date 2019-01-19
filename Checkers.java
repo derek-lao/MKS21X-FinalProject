@@ -124,8 +124,6 @@ public class Checkers{
 
 			Key key = terminal.readInput();
 
-      int r=x;
-      int c=y;
 			if (key != null)
 			{
 
@@ -147,6 +145,7 @@ public class Checkers{
             {
               currentPiece=currentSquare.piece;
             }
+            putString(1,20,terminal,"Piece selected");
           }
           if(key.getCharacter()=='m')
           {
