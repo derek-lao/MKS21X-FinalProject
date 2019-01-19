@@ -172,7 +172,7 @@ public class Checkers{
             }
             else
             {
-              putString(1,20,terminal,"Can't do that! Did something wrong with capture.")
+              putString(1,20,terminal,"Can't do that! Did something wrong with capture.");
             }
           }
 
