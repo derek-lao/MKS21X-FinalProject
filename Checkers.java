@@ -36,6 +36,16 @@ public class Checkers{
     Board field=new Board();
     Player red=new Player(field,true,true);
     Player black=new Player(field,false,false);
+    Player turner;
+    if(!red.myTurn)
+    {
+      turner=black;
+    }
+    if(red.myTurn)
+    {
+      turner=red;
+    }
+
 
     // set of moves
     field.setup();
@@ -126,19 +136,29 @@ public class Checkers{
 					running = false;
 				}
 
-        if(key.getKind() == Key.Kind.Enter)
+        if(x>3 && x<12 && y>4 && y<13)
         {
-          terminal.moveCursor(x,y);
-          r=x;
-          c=y;
-          if(r>3 && r<12 && c>4 && c<13)
+          Square currentSquare;
+          Piece currentPiece;
+          if(key.getKind()==Key.Kind.Enter)
           {
-            Square currentSquare=field.getSquare(r-3,c-4);
+            terminal.moveCursor(x,y);
+            r=x;
+            c=y;
+            currentSquare=field.getSquare(r-3,c-4);
             if(currentSquare.piece!=null)
             {
-              Piece currentPiece=currentSquare.piece;
+              currentPiece=currentSquare.piece;
             }
           }
+          if(key.getCharacter()=='m')
+          {
+            terminal.moveCursor(x,y);
+            r=x;
+            c=y;
+            turner.move(currentPiece,currentSquare);
+          }
+
         }
 
 				if (key.getKind() == Key.Kind.ArrowLeft) {
