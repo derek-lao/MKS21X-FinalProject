@@ -136,8 +136,8 @@ public class Checkers{
 
         if(x>3 && x<12 && y>4 && y<13)
         {
-          Square currentSquare;
-          Piece currentPiece;
+          Square currentSquare=null;
+          Piece currentPiece=null;
           if(key.getKind()==Key.Kind.Enter)
           {
             terminal.moveCursor(x,y);
