@@ -212,7 +212,7 @@ public class Checkers{
               putString(1,21,terminal,"Piece selected to move for capture: "+currentPiece);
               putString(1,22,terminal,"Error: Capture failed");
             }
-            if(!turner.canCapture(currentPiece))
+            if(hasCaptured&&!turner.canCapture(currentPiece))
             {
               red.myTurn=!red.myTurn;
               black.myTurn=!black.myTurn;
