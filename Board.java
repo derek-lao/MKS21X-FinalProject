@@ -14,7 +14,7 @@ public class Board{
   */
   public void clear(){
     field=new Square[12][12];
-    for(int y=1;y<11;y+=10)
+    for(int y=1;y<11;y+=99)
     {
       for(int x=1;x<11;x++)
       {
@@ -23,7 +23,7 @@ public class Board{
     }
     for(int y=1;y<11;y++)
     {
-      for(int x=1;x<11;x+=10)
+      for(int x=1;x<11;x+=9)
       {
         field[y][x]=new Square(dummy);
       }

@@ -158,10 +158,10 @@ public class Player{
       Square cap2=field.getSquare(nowX-1,nowY-1);
       Square cap3=field.getSquare(nowX-1,nowY+1);
       Square cap4=field.getSquare(nowX+1,nowY+1);
-      // System.out.println(cap1);
-      // System.out.println(cap2);
-      // System.out.println(cap3);
-      // System.out.println(cap4);
+      System.out.println(cap1);
+      System.out.println(cap2);
+      System.out.println(cap3);
+      System.out.println(cap4);
       Piece captive1=cap1.piece;
       Piece captive2=cap2.piece;
       Piece captive3=cap3.piece;
