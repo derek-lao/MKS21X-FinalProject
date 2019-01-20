@@ -43,10 +43,10 @@ public class Checkers{
     red.move(field.getSquare(5,6).piece,field.getSquare(6,5));
     red.move(field.getSquare(6,5).piece,field.getSquare(7,4));
     red.move(field.getSquare(4,7).piece,field.getSquare(5,6));
-    red.myTurn=!red.myTurn;
-    black.myTurn=!black.myTurn;
-    black.move(field.getSquare(2,3).piece,field.getSquare(1,4));
-    black.capture(field.getSquare(8,3).piece,field.getSquare(6,5));
+    // red.myTurn=!red.myTurn;
+    // black.myTurn=!black.myTurn;
+    // black.move(field.getSquare(2,3).piece,field.getSquare(1,4));
+    // black.capture(field.getSquare(8,3).piece,field.getSquare(6,5));
     // red.move(field.getSquare(5,6).piece,field.getSquare(6,5));
     // red.move(field.getSquare(6,5).piece,field.getSquare(7,4));
     // black.capture(field.getSquare(8,3).piece,field.getSquare(6,5));
@@ -184,6 +184,12 @@ public class Checkers{
               // turner.move(currentPiece,currentSquare);
               red.myTurn=!red.myTurn;
               black.myTurn=!black.myTurn;
+              putString(1,16,terminal,"                                                                              ");
+              putString(1,17,terminal,"                                                                              ");
+              putString(1,18,terminal,"                                                                              ");
+              putString(1,20,terminal,"                                                                              ");
+              putString(1,21,terminal,"                                                                              ");
+              putString(1,22,terminal,"                                                                              ");
             }
             else
             {
