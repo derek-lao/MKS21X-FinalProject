@@ -38,13 +38,11 @@ public class Checkers{
     Player black=new Player(field,false,false);
     Player turner=red;
 
-
-
-    // set of moves
+    // set of moves for early testing
     field.setup();
-    red.move(field.getSquare(5,6).piece,field.getSquare(6,5));
-    red.move(field.getSquare(6,5).piece,field.getSquare(7,4));
-    black.capture(field.getSquare(8,3).piece,field.getSquare(6,5));
+    // red.move(field.getSquare(5,6).piece,field.getSquare(6,5));
+    // red.move(field.getSquare(6,5).piece,field.getSquare(7,4));
+    // black.capture(field.getSquare(8,3).piece,field.getSquare(6,5));
     // black.capture(field.getSquare(6,3).piece,field.getSquare(8,5));
     // red.capture(field.getSquare(6,5).piece,field.getSquare(4,3));// the working capture statement thus far
     // black.capture(field.getSquare(3,2).piece,field.getSquare(5,4));
@@ -234,8 +232,6 @@ public class Checkers{
 				putString(1,3,terminal,"Seconds since start of program: "+lastSecond);
 
 			}
-
-
 		}
     // screen.refresh();
 	}
