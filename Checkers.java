@@ -63,6 +63,9 @@ public class Checkers{
 		long tStart = System.currentTimeMillis();
 		long lastSecond = 0;
 
+    Square currentSquare=null;
+    Piece currentPiece=null;
+
 		while(running){
 
       //code to create board, and set pieces
@@ -118,12 +121,12 @@ public class Checkers{
       if(!red.myTurn)
       {
         turner=black;
-        putString(1,19,terminal,"Black to move");
+        putString(1,15,terminal,"Black to move");
       }
       if(red.myTurn)
       {
         turner=red;
-        putString(1,19,terminal,"Red to move");
+        putString(1,15,terminal,"Red to move");
       }
 			Key key = terminal.readInput();
 
@@ -138,8 +141,6 @@ public class Checkers{
 
         if(x>3 && x<12 && y>4 && y<13)
         {
-          Square currentSquare=null;
-          Piece currentPiece=null;
           if(key.getKind()==Key.Kind.Enter)
           {
             terminal.moveCursor(x,y);
