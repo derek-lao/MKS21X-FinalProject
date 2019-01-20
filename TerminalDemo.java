@@ -14,16 +14,17 @@ import com.googlecode.lanterna.input.InputDecoder;
 import com.googlecode.lanterna.input.InputProvider;
 import com.googlecode.lanterna.input.Key;
 import com.googlecode.lanterna.input.KeyMappingProfile;
+import com.googlecode.lanterna.screen.*;
 
 
 public class TerminalDemo {
 
-	public static void putString(int r, int c, String s){
-		terminal.moveCursor(r,c);
-		for(int i = 0; i < s.length();i++){
-			terminal.putCharacter(s.charAt(i));
-		}
-	}
+	// public static void putString(int r, int c, String s, Terminal.Color f, Terminal.Color b){
+	// 	t.moveCursor(r,c);
+	// 	for(int i = 0; i < s.length();i++){
+	// 		t.putCharacter(s.charAt(i));
+	// 	}
+	// }
 	public static void main(String[] args) {
 
 
@@ -121,18 +122,18 @@ public class TerminalDemo {
           terminal.putCharacter('X');
           x--;y--;
         }
-				putString(1,4,"["+key.getCharacter() +"]");
-				putString(1,1,key+"        ");//to clear leftover letters pad withspaces
+				screen.putString(1,4,"["+key.getCharacter() +"]",Terminal.Color.DEFAULT,Terminal.Color.DEFAULT,ScreenCharacterStyle.valueOf("Reverse"));
+				screen.putString(1,1,key+"        ",Terminal.Color.DEFAULT,Terminal.Color.DEFAULT,ScreenCharacterStyle.valueOf("Reverse"));//to clear leftover letters pad withspaces
 			}
 
 			//DO EVEN WHEN NO KEY PRESSED:
 			long tEnd = System.currentTimeMillis();
 			long millis = tEnd - tStart;
-			putString(1,2,"Milliseconds since start of program: "+millis);
+			screen.putString(1,2,"Milliseconds since start of program: "+millis,Terminal.Color.DEFAULT,Terminal.Color.DEFAULT,ScreenCharacterStyle.valueOf("Reverse"));
 			if(millis/1000 > lastSecond){
 				lastSecond = millis / 1000;
 				//one second has passed.
-				putString(1,3,"Seconds since start of program: "+lastSecond);
+				screen.putString(1,3,"Seconds since start of program: "+lastSecond,Terminal.Color.DEFAULT,Terminal.Color.DEFAULT,ScreenCharacterStyle.valueOf("Reverse"));
 
 			}
 		}
