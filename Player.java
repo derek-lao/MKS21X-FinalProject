@@ -96,17 +96,16 @@ public class Player{
       // System.out.println(captive3);
       // System.out.println(captive4);
       // System.out.println();
-
       {
         // this checks if the piece being captured is valid
-        if(target==square1) //captive1!=null&&captive1.colorRed!=warrior.colorRed
+        if((warrior.king||(!warrior.king&&warrior.colorRed))&&target==square1) //captive1!=null&&captive1.colorRed!=warrior.colorRed
         {
           warrior.motion(target);
           warrior.kill(captive1);
           warrior.becomeKing();
           return true;
         }
-        if(target==square2) //captive2!=null&&captive2.colorRed!=warrior.colorRed
+        if((warrior.king||(!warrior.king&&warrior.colorRed))&&target==square2) //captive2!=null&&captive2.colorRed!=warrior.colorRed
         {
           // System.out.println(cap2);
           // System.out.println(captive2);
@@ -115,14 +114,14 @@ public class Player{
           warrior.becomeKing();
           return true;
         }
-        if(target==square3) //captive3!=null&&captive3.colorRed!=warrior.colorRed
+        if((warrior.king||(!warrior.king&&!warrior.colorRed))&&target==square3) //captive3!=null&&captive3.colorRed!=warrior.colorRed
         {
           warrior.motion(target);
           warrior.kill(captive3);
           warrior.becomeKing();
           return true;
         }
-        if(target==square4) //captive4!=null&&captive4.colorRed!=warrior.colorRed
+        if((warrior.king||(!warrior.king&&!warrior.colorRed))&&target==square4) //captive4!=null&&captive4.colorRed!=warrior.colorRed
         {
           warrior.motion(target);
           warrior.kill(captive4);
