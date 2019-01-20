@@ -63,6 +63,9 @@ public class Checkers{
 		long tStart = System.currentTimeMillis();
 		long lastSecond = 0;
 
+    Square currentSquare=null;
+    Piece currentPiece=null;
+
 		while(running){
 
       //code to create board, and set pieces
@@ -138,8 +141,6 @@ public class Checkers{
 
         if(x>3 && x<12 && y>4 && y<13)
         {
-          Square currentSquare=null;
-          Piece currentPiece=null;
           if(key.getKind()==Key.Kind.Enter)
           {
             terminal.moveCursor(x,y);
