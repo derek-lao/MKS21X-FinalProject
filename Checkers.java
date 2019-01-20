@@ -70,6 +70,7 @@ public class Checkers{
 
     Square currentSquare=null;
     Piece currentPiece=null;
+    boolean hasCaptured=false;
 
 		while(running){
 
@@ -174,7 +175,6 @@ public class Checkers{
             putString(1,17,terminal,"Square coordinates: "+currentSquare.getX()+","+currentSquare.getY());
             putString(1,18,terminal,"Piece selected: "+currentPiece);
           }
-          boolean hasCaptured=false;
           if(key.getCharacter()=='m')
           {
             terminal.moveCursor(x,y);
@@ -208,28 +208,37 @@ public class Checkers{
             }
             else
             {
-              putString(1,20,terminal,"Square coordinates for target square to capture to: "+currentSquare.getX()+","+currentSquare.getY()+"            ");
-              putString(1,21,terminal,"Piece selected to move for capture: "+currentPiece+"        ");
-              putString(1,22,terminal,"Error: Capture failed               ");
-            }
-            if(turner.canCapture(currentPiece))
-            {
-              putString(1,20,terminal,"You can still capture. Press e to end turn                            ");
+              putString(1,20,terminal,"Square coordinates for target square to capture to: "+currentSquare.getX()+","+currentSquare.getY());
+              putString(1,21,terminal,"Piece selected to move for capture: "+currentPiece);
+              putString(1,22,terminal,"Error: Capture failed");
             }
             if(!turner.canCapture(currentPiece))
             {
               red.myTurn=!red.myTurn;
               black.myTurn=!black.myTurn;
+              hasCaptured=false;
+              putString(1,16,terminal,"                                                                              ");
+              putString(1,17,terminal,"                                                                              ");
+              putString(1,18,terminal,"                                                                              ");
+              putString(1,20,terminal,"                                                                              ");
+              putString(1,21,terminal,"                                                                              ");
+              putString(1,22,terminal,"                                                                              ");
             }
 
           }
           if(hasCaptured && turner.canCapture(currentPiece))
           {
+            putString(1,20,terminal,"You can still capture. Press e to end turn                                    ");
             if(key.getCharacter()=='e')
             {
               red.myTurn=!red.myTurn;
               black.myTurn=!black.myTurn;
-              putString(1,20,terminal,"Turn ended. To check whose turn it is, look four lines above.");
+              putString(1,16,terminal,"                                                                              ");
+              putString(1,17,terminal,"                                                                              ");
+              putString(1,18,terminal,"                                                                              ");
+              putString(1,20,terminal,"Turn ended. To check whose turn it is, look four lines above.                 ");
+              putString(1,21,terminal,"                                                                              ");
+              putString(1,22,terminal,"                                                                              ");
             }
           }
 
