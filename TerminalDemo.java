@@ -19,9 +19,9 @@ import com.googlecode.lanterna.input.KeyMappingProfile;
 public class TerminalDemo {
 
 	public static void putString(int r, int c, String s){
-		moveCursor(r,c);
+		terminal.moveCursor(r,c);
 		for(int i = 0; i < s.length();i++){
-			putCharacter(s.charAt(i));
+			terminal.putCharacter(s.charAt(i));
 		}
 	}
 	public static void main(String[] args) {
