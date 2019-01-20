@@ -45,6 +45,7 @@ public class Player{
       )
       {
         warrior.motion(target);
+        warrior.becomeKing();
         return true;
       }
       else
@@ -117,6 +118,7 @@ public class Player{
         {
           warrior.motion(target);
           warrior.kill(captive1);
+          warrior.becomeKing();
           return true;
         }
         if(target==square2 && captive2!=null && captive2.colorRed!=warrior.colorRed)
@@ -125,18 +127,21 @@ public class Player{
           // System.out.println(captive2);
           warrior.motion(target);
           warrior.kill(captive2);
+          warrior.becomeKing();
           return true;
         }
         if(target==square3 && captive3!=null && captive3.colorRed!=warrior.colorRed)
         {
           warrior.motion(target);
           warrior.kill(captive3);
+          warrior.becomeKing();
           return true;
         }
         if(target==square4 && captive4!=null && captive4.colorRed!=warrior.colorRed)
         {
           warrior.motion(target);
           warrior.kill(captive4);
+          warrior.becomeKing();
           return true;
         }
         else

@@ -127,8 +127,8 @@ public class Piece{
   // }
 
   public void becomeKing(){
-    if(colorRed && !king && position.getY()==0) king=true;
-    if(!colorRed && !king && position.getY()==7) king=true;
+    if(colorRed && !king && position.getY()==1) king=true;
+    if(!colorRed && !king && position.getY()==8) king=true;
   }
 
 
