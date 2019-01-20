@@ -167,6 +167,7 @@ public class Checkers{
             putString(1,17,terminal,"Square coordinates: "+currentSquare.getX()+","+currentSquare.getY());
             putString(1,18,terminal,"Piece selected: "+currentPiece);
           }
+          boolean hasCaptured=false;
           if(key.getCharacter()=='m')
           {
             terminal.moveCursor(x,y);
@@ -190,7 +191,14 @@ public class Checkers{
             currentSquare=field.getSquare(x-3,y-4);
             if(turner.capture(currentPiece,currentSquare))
             {
-              // turner.capture(currentPiece,currentSquare);
+              hasCaptured=true;
+            }
+            if(turner.canCapture(currentPiece))
+            {
+              putString(1,20,terminal,"You can still capture. Press e to end turn");
+            }
+            if(!turner.canCapture(currentPiece))
+            {
               red.myTurn=!red.myTurn;
               black.myTurn=!black.myTurn;
             }
@@ -199,6 +207,15 @@ public class Checkers{
               putString(1,20,terminal,"Square coordinates for target square to capture to: "+currentSquare.getX()+","+currentSquare.getY());
               putString(1,21,terminal,"Piece selected to move for capture: "+currentPiece);
               putString(1,22,terminal,"Error: Capture failed");
+            }
+          }
+          if(hasCaptured && turner.canCapture(currentPiece))
+          {
+            if(key.getCharacter()=='e')
+            {
+              red.myTurn=!red.myTurn;
+              black.myTurn=!black.myTurn;
+              putString(1,20,terminal,"Turn ended. To check whose turn it is, look four lines above.");
             }
           }
 

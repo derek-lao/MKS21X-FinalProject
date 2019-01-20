@@ -126,6 +126,7 @@ public class Piece{
   //   return false;
   // }
 
+  
   public void becomeKing(){
     if(colorRed && !king && position.getY()==1) king=true;
     if(!colorRed && !king && position.getY()==8) king=true;
