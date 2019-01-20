@@ -122,18 +122,18 @@ public class TerminalDemo {
           terminal.putCharacter('X');
           x--;y--;
         }
-				screen.putString(1,4,"["+key.getCharacter() +"]",Terminal.Color.WHITE,Terminal.Color.BLACK,ScreenCharacterStyle.valueOf("Reverse"));
-				screen.putString(1,1,key+"        ",Terminal.Color.WHITE,Terminal.Color.BLACK,ScreenCharacterStyle.valueOf("Reverse"));//to clear leftover letters pad withspaces
+				screen.putString(1,4,"["+key.getCharacter() +"]",Terminal.Color.WHITE,Terminal.Color.BLACK,ScreenCharacterStyle.valueOf("Blinking"));
+				screen.putString(1,1,key+"        ",Terminal.Color.WHITE,Terminal.Color.BLACK,ScreenCharacterStyle.valueOf("Blinking"));//to clear leftover letters pad withspaces
 			}
 
 			//DO EVEN WHEN NO KEY PRESSED:
 			long tEnd = System.currentTimeMillis();
 			long millis = tEnd - tStart;
-			screen.putString(1,2,"Milliseconds since start of program: "+millis,Terminal.Color.WHITE,Terminal.Color.BLACK,ScreenCharacterStyle.valueOf("Reverse"));
+			screen.putString(1,2,"Milliseconds since start of program: "+millis,Terminal.Color.WHITE,Terminal.Color.BLACK,ScreenCharacterStyle.valueOf("Blinking"));
 			if(millis/1000 > lastSecond){
 				lastSecond = millis / 1000;
 				//one second has passed.
-				screen.putString(1,3,"Seconds since start of program: "+lastSecond,Terminal.Color.WHITE,Terminal.Color.BLACK,ScreenCharacterStyle.valueOf("Reverse"));
+				screen.putString(1,3,"Seconds since start of program: "+lastSecond,Terminal.Color.WHITE,Terminal.Color.BLACK,ScreenCharacterStyle.valueOf("Blinking"));
 
 			}
 		}
