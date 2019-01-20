@@ -148,9 +148,9 @@ public class Checkers{
             {
               currentPiece=currentSquare.piece;
             }
-            putString(1,20,terminal,"Piece selected");
-            putString(1,21,terminal,"Square coordinates: "+currentSquare.getX()+","+currentSquare.getY());
-            putString(1,22,terminal,"Piece selected: "+currentPiece);
+            putString(1,16,terminal,"Piece selected");
+            putString(1,17,terminal,"Square coordinates: "+currentSquare.getX()+","+currentSquare.getY());
+            putString(1,18,terminal,"Piece selected: "+currentPiece);
           }
           if(key.getCharacter()=='m')
           {
@@ -164,7 +164,9 @@ public class Checkers{
             }
             else
             {
-              putString(1,20,terminal,"Error: Move failed");
+              putString(1,20,terminal,"Square coordinates for target square: "+currentSquare.getX()+","+currentSquare.getY());
+              putString(1,21,terminal,"Piece selected to move: "+currentPiece);
+              putString(1,22,terminal,"Error: Move failed");
             }
           }
           if(key.getCharacter()=='c')
@@ -179,7 +181,9 @@ public class Checkers{
             }
             else
             {
-              putString(1,20,terminal,"Error: Capture failed");
+              putString(1,20,terminal,"Square coordinates for target square to capture to: "+currentSquare.getX()+","+currentSquare.getY());
+              putString(1,21,terminal,"Piece selected to move for capture: "+currentPiece);
+              putString(1,22,terminal,"Error: Capture failed");
             }
           }
 
