@@ -91,17 +91,33 @@ public class Checkers{
             // terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
             // terminal.applyForegroundColor(Terminal.Color.DEFAULT);
           }
-          if(field.getSquare(r-3,c-4).isOccupied()&&field.getSquare(r-3,c-4).piece.colorRed)
+          if(field.getSquare(r-3,c-4).isOccupied())
           {
-            terminal.moveCursor(r,c);
-            terminal.applyForegroundColor(Terminal.Color.RED);
-            terminal.putCharacter('\u25cf');
-          }
-          if(field.getSquare(r-3,c-4).isOccupied()&&!field.getSquare(r-3,c-4).piece.colorRed)
-          {
-            terminal.moveCursor(r,c);
-            terminal.applyForegroundColor(Terminal.Color.MAGENTA);
-            terminal.putCharacter('\u25cf');
+            Piece pieceNow=field.getSquare(r-3,c-4).piece;
+            if(pieceNow.colorRed&&!pieceNow.king)
+            {
+              terminal.moveCursor(r,c);
+              terminal.applyForegroundColor(Terminal.Color.RED);
+              terminal.putCharacter('\u25cf');
+            }
+            if(!pieceNow.colorRed&&!pieceNow.king)
+            {
+              terminal.moveCursor(r,c);
+              terminal.applyForegroundColor(Terminal.Color.MAGENTA);
+              terminal.putCharacter('\u25cf');
+            }
+            if(pieceNow.colorRed&&pieceNow.king)
+            {
+              terminal.moveCursor(r,c);
+              terminal.applyForegroundColor(Terminal.Color.RED);
+              terminal.putCharacter('\u1f451');
+            }
+            if(!pieceNow.colorRed&&pieceNow.king)
+            {
+              terminal.moveCursor(r,c);
+              terminal.applyForegroundColor(Terminal.Color.MAGENTA);
+              terminal.putCharacter('\u1f451');
+            }
           }
         }
       }
