@@ -98,25 +98,25 @@ public class Checkers{
             {
               terminal.moveCursor(r,c);
               terminal.applyForegroundColor(Terminal.Color.RED);
-              terminal.putCharacter('\u25cf');
+              terminal.putCharacter('\u25CF');
             }
             if(!pieceNow.colorRed&&!pieceNow.king)
             {
               terminal.moveCursor(r,c);
               terminal.applyForegroundColor(Terminal.Color.MAGENTA);
-              terminal.putCharacter('\u25cf');
+              terminal.putCharacter('\u25CF');
             }
             if(pieceNow.colorRed&&pieceNow.king)
             {
               terminal.moveCursor(r,c);
               terminal.applyForegroundColor(Terminal.Color.RED);
-              terminal.putCharacter('\u1f451');
+              terminal.putCharacter('\uD83D\uDC51');
             }
             if(!pieceNow.colorRed&&pieceNow.king)
             {
               terminal.moveCursor(r,c);
               terminal.applyForegroundColor(Terminal.Color.MAGENTA);
-              terminal.putCharacter('\u1f451');
+              terminal.putCharacter('\uD83D\uDC51');
             }
           }
         }
