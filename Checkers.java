@@ -43,6 +43,7 @@ public class Checkers{
     red.move(field.getSquare(5,6).piece,field.getSquare(6,5));
     red.move(field.getSquare(6,5).piece,field.getSquare(7,4));
     red.move(field.getSquare(4,7).piece,field.getSquare(5,6));
+    black.capture(field.getSquare(8,3).piece,field.getSquare(6,5));
     // red.move(field.getSquare(5,6).piece,field.getSquare(6,5));
     // red.move(field.getSquare(6,5).piece,field.getSquare(7,4));
     // black.capture(field.getSquare(8,3).piece,field.getSquare(6,5));

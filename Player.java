@@ -175,7 +175,7 @@ public class Player{
       // this checks if the piece movement adheres to its king or not-king restrictions
       boolean frontalMovementValidation=
       (square1!=null&&!square1.isOccupied()&&captive1!=null&&captive1.colorRed!=warrior.colorRed)||
-      (square2!=null&&!square1.isOccupied()&&captive2!=null&&captive2.colorRed!=warrior.colorRed);
+      (square2!=null&&!square2.isOccupied()&&captive2!=null&&captive2.colorRed!=warrior.colorRed);
       boolean backwardMovementValidation=
       (square3!=null&&!square3.isOccupied()&&captive3!=null&&captive3.colorRed!=warrior.colorRed)||
       (square4!=null&&!square4.isOccupied()&&captive4!=null&&captive4.colorRed!=warrior.colorRed);
