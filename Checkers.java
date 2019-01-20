@@ -110,13 +110,13 @@ public class Checkers{
             {
               terminal.moveCursor(r,c);
               terminal.applyForegroundColor(Terminal.Color.RED);
-              terminal.putCharacter('\uD83D\uDC51');
+              terminal.putCharacter('\u25CB');
             }
             if(!pieceNow.colorRed&&pieceNow.king)
             {
               terminal.moveCursor(r,c);
               terminal.applyForegroundColor(Terminal.Color.MAGENTA);
-              terminal.putCharacter('\uD83D\uDC51');
+              terminal.putCharacter('\u25CB');
             }
           }
         }
