@@ -14,6 +14,11 @@ public class Piece{
     position=place;
   }
 
+  public Piece(Square place){
+    // constructor to set up dummy
+    position=place;
+  }
+
   public Square getPosition(){
     return position;
   }
@@ -126,7 +131,7 @@ public class Piece{
   //   return false;
   // }
 
-  
+
   public void becomeKing(){
     if(colorRed && !king && position.getY()==1) king=true;
     if(!colorRed && !king && position.getY()==8) king=true;

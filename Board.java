@@ -2,10 +2,11 @@ public class Board{
   private Square[][] field;
 
   public Board(){
-    field=new Square[10][10];
+    field=new Square[12][12];
     this.clear();
   }
 
+  Piece dummy=new Piece(null);
   // does the same thing as the constructor...  may be a redundant method.
   // or maybe it is not such a good idea to do this
   /**
@@ -13,11 +14,18 @@ public class Board{
   */
   public void clear(){
     field=new Square[12][12];
-    for(int y=1;y<11;y++)
+    for(int y=1;y<11;y+=10)
     {
       for(int x=1;x<11;x++)
       {
-        field[y][x]=new Square(null);
+        field[y][x]=new Square(dummy);
+      }
+    }
+    for(int y=1;y<11;y++)
+    {
+      for(int x=1;x<11;x+=10)
+      {
+        field[y][x]=new Square(dummy);
       }
     }
     for(int y=2;y<10;y+=2)
