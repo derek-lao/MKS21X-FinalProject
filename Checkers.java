@@ -1,4 +1,4 @@
-White piecesimport com.googlecode.lanterna.terminal.Terminal.SGR;
+import com.googlecode.lanterna.terminal.Terminal.SGR;
 import com.googlecode.lanterna.TerminalFacade;
 import com.googlecode.lanterna.input.Key;
 import com.googlecode.lanterna.input.Key.Kind;
