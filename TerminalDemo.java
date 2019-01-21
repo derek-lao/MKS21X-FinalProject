@@ -18,11 +18,10 @@ import com.googlecode.lanterna.screen.*;
 
 
 public class TerminalDemo {
-
 	// public static void putString(int r, int c, String s, Terminal.Color f, Terminal.Color b){
-	// 	t.moveCursor(r,c);
+	// 	moveCursor(r,c);
 	// 	for(int i = 0; i < s.length();i++){
-	// 		t.putCharacter(s.charAt(i));
+	// 		putCharacter(s.charAt(i));
 	// 	}
 	// }
 	public static void main(String[] args) {
@@ -124,6 +123,8 @@ public class TerminalDemo {
 			//DO EVEN WHEN NO KEY PRESSED:
 			long tEnd = System.currentTimeMillis();
 			long millis = tEnd - tStart;
+			terminal.applyBackgroundColor(Terminal.Color.RED);
+			terminal.applyForegroundColor(Terminal.Color.WHITE);
 			screen.putString(1,2,"Milliseconds since start of program: "+millis,Terminal.Color.WHITE,Terminal.Color.RED);
 			if(millis/1000 > lastSecond){
 				lastSecond = millis / 1000;
