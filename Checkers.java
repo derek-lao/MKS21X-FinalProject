@@ -245,6 +245,8 @@ public class Checkers{
         //keys to press specific to when in game, not in menu
 				if(!menuMode)
         {
+          terminal.applyForegroundColor(Terminal.Color.WHITE);
+          terminal.applyBackgroundColor(Terminal.Color.BLACK);
           if(key.getCharacter()==' ')
           {
             menuMode=!menuMode;
@@ -254,6 +256,8 @@ public class Checkers{
           {
             if(key.getKind()==Key.Kind.Enter)
             {
+              terminal.applyForegroundColor(Terminal.Color.WHITE);
+              terminal.applyBackgroundColor(Terminal.Color.BLACK);
               if(!hasCaptured)
               {
                 terminal.moveCursor(x,y);
@@ -282,6 +286,8 @@ public class Checkers{
             }
             if(key.getCharacter()=='m')
             {
+              terminal.applyForegroundColor(Terminal.Color.WHITE);
+              terminal.applyBackgroundColor(Terminal.Color.BLACK);
               if(!hasCaptured)
               {
                 terminal.moveCursor(x,y);
@@ -315,6 +321,8 @@ public class Checkers{
             }
             if(key.getCharacter()=='c')
             {
+              terminal.applyForegroundColor(Terminal.Color.WHITE);
+              terminal.applyBackgroundColor(Terminal.Color.BLACK);
               terminal.moveCursor(x,y);
               currentSquare=field.getSquare(x-3,y-4);
               if(turner.capture(currentPiece,currentSquare))
