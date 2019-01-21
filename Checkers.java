@@ -218,6 +218,8 @@ public class Checkers{
           if(key.getCharacter()=='p')
           {
             field.setup();
+            terminal.applyForegroundColor(Terminal.Color.WHITE);
+            terminal.applyBackgroundColor(Terminal.Color.BLACK);
             for(int i=16;i<23;i++)
             {
               putString(1,i,terminal,"                                                                                  ");
@@ -226,6 +228,8 @@ public class Checkers{
           }
           if(key.getCharacter()=='c')
           {
+            terminal.applyForegroundColor(Terminal.Color.WHITE);
+            terminal.applyBackgroundColor(Terminal.Color.BLACK);
             for(int i=16;i<23;i++)
             {
               putString(1,i,terminal,"                                                                                  ");
