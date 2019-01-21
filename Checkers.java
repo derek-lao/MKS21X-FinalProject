@@ -51,6 +51,11 @@ public class Checkers{
     black.capture(field.getSquare(6,5).piece,field.getSquare(4,7));
     red.myTurn=!red.myTurn;
     black.myTurn=!black.myTurn;
+    red.move(field.getSquare(6,7).piece,field.getSquare(5,6));
+    red.move(field.getSquare(5,8).piece,field.getSquare(6,7));
+    red.myTurn=!red.myTurn;
+    black.myTurn=!black.myTurn;
+    black.move(field.getSquare(4,7).piece,field.getSquare(5,8));
 
 		int x = 4;
 		int y = 5;
