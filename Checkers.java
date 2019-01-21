@@ -208,7 +208,7 @@ public class Checkers{
       }
 
 
-      Key key = screen.readInput();
+      Key key = terminal.readInput();
 
 			if (key != null)
 			{
