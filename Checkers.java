@@ -54,7 +54,7 @@ public class Checkers{
 		int y = 5;
 
 		Terminal terminal = TerminalFacade.createTextTerminal();
-    screen screen=new Screen(terminal);
+    Screen screen=new Screen(terminal);
 		screen.startScreen();
 		terminal.enterPrivateMode();
 
