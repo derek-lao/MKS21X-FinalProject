@@ -33,7 +33,8 @@ public class TerminalDemo {
 
 		Terminal terminal = TerminalFacade.createTextTerminal();
 		Screen screen=new Screen(terminal);
-		terminal.enterPrivateMode();
+		screen.startScreen();
+		// terminal.enterPrivateMode();
 
 		TerminalSize size = terminal.getTerminalSize();
 		terminal.setCursorVisible(false);
@@ -80,8 +81,8 @@ public class TerminalDemo {
 			{
 
 				if (key.getKind() == Key.Kind.Escape) {
-
-					terminal.exitPrivateMode();
+					screen.stopScreen();
+					// terminal.exitPrivateMode();
 					running = false;
 				}
 
