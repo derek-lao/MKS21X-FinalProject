@@ -14,4 +14,4 @@ Development Log:
 1/17:  Actually wrote the methods, delinked the squares, and changed board size to 10x10 to avoid ArrayOutOfBoundsException.
 1/18:  Added error lines for if the code does not work. For some reason, capture and move failed, but if I hard coded them, they worked.
 1/19:  More nullPointerException's so I changed board size to 12x12. Enabled capture and move in terminal. Wrote code for canCapture in Player.java. Made it an option to capture multiple times. If the player does not want to capture, they can press e to escape move.
-1/20:  Added move restrictions for if a player was in the middle of capturing. Added menu. I am trying to get screen to work because my terminal lags like crazy without it.
+1/20:  Added move restrictions for if a player was in the middle of capturing. Added menu. Fixed terminal lagging. Working on implementing screen. Nullpointerexception encountered when king tries to capture backwards.
