@@ -115,7 +115,7 @@ public class Checkers{
 
         terminal.applyForegroundColor(Terminal.Color.YELLOW);
         terminal.applyBackgroundColor(Terminal.Color.BLACK);
-        for(int i=5;i<16;i++)
+        for(int i=4;i<16;i++)
         {
           putString(1,i,terminal,"                                                                                 ");
         }
@@ -145,20 +145,28 @@ public class Checkers{
 
         if(blackPiecesLeft==0)
         {
-          putString(15,5,terminal,"Red won! Press spacebar to return to menu and start a new game.");
-          putString(15,6,terminal,"                                                               ");
+          putString(1,5,terminal,"Red won! Press spacebar to return to menu and start a new game.     ");
+          putString(1,6,terminal,"                                                                    ");
+          for(int i=7;i<23;i++)
+          {
+            putString(1,i,terminal,"                                                                        ");
+          }
         }
         if(redPiecesLeft==0)
         {
-          putString(15,5,terminal,"Black won! Press spacebar to return to menu and start a new game.");
-          putString(15,6,terminal,"                                                               ");
+          putString(1,5,terminal,"Black won! Press spacebar to return to menu and start a new game.   ");
+          putString(1,6,terminal,"                                                                    ");
+          for(int i=7;i<23;i++)
+          {
+            putString(1,i,terminal,"                                                                        ");
+          }
         }
         if(redPiecesLeft>0 && blackPiecesLeft>0)
         {
           putString(1,13,terminal,"Press spacebar to see menu.                                                      ");
           putString(1,14,terminal,"You will not lose your current game unless you select \"Start new game\"         ");
-          putString(15,5,terminal,"Red pieces remaining: "+redPiecesLeft);
-          putString(15,6,terminal,"White pieces remaining: "+blackPiecesLeft);
+          putString(14,5,terminal,"Red pieces remaining: "+redPiecesLeft);
+          putString(14,6,terminal,"White pieces remaining: "+blackPiecesLeft);
 
 
           if(!red.myTurn)
