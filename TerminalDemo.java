@@ -117,7 +117,7 @@ public class TerminalDemo {
 					x++;
 				}
 
-				screen.putString(1,4,"["+key.getCharacter() +"]"Terminal.Color.WHITE,Terminal.Color.RED);
+				screen.putString(1,4,"["+key.getCharacter() +"]",Terminal.Color.WHITE,Terminal.Color.RED);
 				screen.putString(1,1,key+"        ",Terminal.Color.WHITE,Terminal.Color.RED);//to clear leftover letters pad withspaces
 			}
 
