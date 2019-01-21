@@ -123,10 +123,6 @@ public class TerminalDemo {
 			//DO EVEN WHEN NO KEY PRESSED:
 			long tEnd = System.currentTimeMillis();
 			long millis = tEnd - tStart;
-			terminal.applyBackgroundColor(Terminal.Color.RED);
-			terminal.applyForegroundColor(Terminal.Color.GREEN);
-			terminal.putCharacter('H');
-			terminal.putCharacter('I');
 			putString(1,2,terminal,"Milliseconds since start of program: "+millis,Terminal.Color.WHITE,Terminal.Color.RED);
 			if(millis/1000 > lastSecond){
 				lastSecond = millis / 1000;
