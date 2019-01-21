@@ -117,16 +117,16 @@ public class Checkers{
         terminal.applyBackgroundColor(Terminal.Color.BLACK);
         for(int i=4;i<16;i++)
         {
-          putString(1,i,terminal,"                                                                                 ");
+          putString(1,i,terminal,"                                                                     ");
         }
-        putString(1,16,terminal,"Welcome to the Checkers game created by Derek Lao!                                ");
-        putString(1,17,terminal,"This is a variant of checkers where capturing is not obligatory                   ");
-        putString(1,18,terminal,"Choose one of the options below                                                   ");
-        putString(1,20,terminal,"Press the key that corresponds with the option to activate                        ");
-        putString(1,21,terminal,"Start new game (Press p)                                                          ");
-        putString(1,22,terminal,"Continue game  (Press g)                                                          ");
-        putString(1,13,terminal,"                                                                                  ");
-        putString(1,14,terminal,"                                                                                  ");
+        putString(1,16,terminal,"Welcome to the Checkers game created by Derek Lao!                    ");
+        putString(1,17,terminal,"This is a variant of checkers where capturing is not obligatory       ");
+        putString(1,18,terminal,"Choose one of the options below                                       ");
+        putString(1,20,terminal,"Press the key that corresponds with the option to activate            ");
+        putString(1,21,terminal,"Start new game (Press p)                                              ");
+        putString(1,22,terminal,"Continue game  (Press g)                                              ");
+        putString(1,13,terminal,"                                                                      ");
+        putString(1,14,terminal,"                                                                      ");
       }
 
       if(!menuMode)//permanent visual features specific to while not in menu
@@ -149,7 +149,7 @@ public class Checkers{
           putString(1,6,terminal,"                                                                    ");
           for(int i=7;i<23;i++)
           {
-            putString(1,i,terminal,"                                                                        ");
+            putString(1,i,terminal,"                                                                  ");
           }
         }
         if(redPiecesLeft==0)
@@ -158,13 +158,13 @@ public class Checkers{
           putString(1,6,terminal,"                                                                    ");
           for(int i=7;i<23;i++)
           {
-            putString(1,i,terminal,"                                                                        ");
+            putString(1,i,terminal,"                                                                     ");
           }
         }
         if(redPiecesLeft>0 && blackPiecesLeft>0)
         {
-          putString(1,13,terminal,"Press spacebar to see menu.                                                      ");
-          putString(1,14,terminal,"You will not lose your current game unless you select \"Start new game\"         ");
+          putString(1,13,terminal,"Press spacebar to see menu.                                            ");
+          putString(1,14,terminal,"You will not lose your current game unless you select \"Start new game\"  ");
           putString(14,5,terminal,"Red pieces remaining: "+redPiecesLeft);
           putString(14,6,terminal,"White pieces remaining: "+blackPiecesLeft);
 
@@ -260,7 +260,7 @@ public class Checkers{
             terminal.applyBackgroundColor(Terminal.Color.BLACK);
             for(int i=16;i<23;i++)
             {
-              putString(1,i,terminal,"                                                                                  ");
+              putString(1,i,terminal,"                                                                ");
             }
             menuMode=!menuMode;
           }
@@ -270,13 +270,13 @@ public class Checkers{
             terminal.applyBackgroundColor(Terminal.Color.BLACK);
             for(int i=16;i<23;i++)
             {
-              putString(1,i,terminal,"                                                                                  ");
+              putString(1,i,terminal,"                                                                    ");
             }
             if(hasCaptured && turner.canCapture(currentPiece))
             {
-              putString(1,20,terminal,"You can still capture!                                                           ");
-              putString(1,21,terminal,"Use arrow keys to select new capture destination, then press c to capture        ");
-              putString(1,22,terminal,"Press e to end turn.                                                             ");
+              putString(1,20,terminal,"You can still capture!                                                         ");
+              putString(1,21,terminal,"Use arrow keys to select new capture destination, then press c to capture      ");
+              putString(1,22,terminal,"Press e to end turn.                                                           ");
             }
             menuMode=!menuMode;
           }
