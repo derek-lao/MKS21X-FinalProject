@@ -116,8 +116,8 @@ public class Checkers{
         putString(1,20,terminal,"Press the key that corresponds with the option to activate                        ");
         putString(1,21,terminal,"Start new game (Press p)                                                          ");
         putString(1,22,terminal,"Continue game  (Press c)                                                          ");
-        putString(1,24,terminal,"                                                                                  ");
-        putString(1,25,terminal,"                                                                                  ");
+        putString(1,13,terminal,"                                                                                  ");
+        putString(1,14,terminal,"                                                                                  ");
       }
 
       if(!menuMode)//permanent visual features specific to while not in menu
@@ -132,8 +132,8 @@ public class Checkers{
   				//one second has passed.
   				putString(1,3,terminal,"Seconds since start of program: "+lastSecond);
         }
-        putString(1,24,terminal,"Press spacebar to see menu.                                                      ");
-        putString(1,25,terminal,"You will not lose your current game unless you select \"Start new game\"         ");
+        putString(1,13,terminal,"Press spacebar to see menu.                                                      ");
+        putString(1,14,terminal,"You will not lose your current game unless you select \"Start new game\"         ");
 
 
         if(!red.myTurn)
@@ -218,7 +218,7 @@ public class Checkers{
           if(key.getCharacter()=='p')
           {
             field.setup();
-            for(int i=16;i<26;i++)
+            for(int i=16;i<23;i++)
             {
               putString(1,i,terminal,"                                                                                  ");
             }
@@ -226,7 +226,7 @@ public class Checkers{
           }
           if(key.getCharacter()=='c')
           {
-            for(int i=16;i<26;i++)
+            for(int i=16;i<23;i++)
             {
               putString(1,i,terminal,"                                                                                  ");
             }
