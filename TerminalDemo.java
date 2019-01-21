@@ -72,8 +72,8 @@ public class TerminalDemo {
 			terminal.putCharacter(' ');
 			terminal.putCharacter(' ');
 			terminal.putCharacter(' ');
-			terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
-			terminal.applyForegroundColor(Terminal.Color.DEFAULT);
+			// terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+			// terminal.applyForegroundColor(Terminal.Color.DEFAULT);
 
 			Key key = terminal.readInput();
 
