@@ -47,19 +47,15 @@ public class Checkers{
     red.myTurn=!red.myTurn;
     black.myTurn=!black.myTurn;
     black.move(field.getSquare(2,3).piece,field.getSquare(1,4));
-    // black.capture(field.getSquare(8,3).piece,field.getSquare(6,5));
-    // red.move(field.getSquare(5,6).piece,field.getSquare(6,5));
-    // red.move(field.getSquare(6,5).piece,field.getSquare(7,4));
-    // black.capture(field.getSquare(8,3).piece,field.getSquare(6,5));
-    // black.capture(field.getSquare(6,3).piece,field.getSquare(8,5));
-    // red.capture(field.getSquare(6,5).piece,field.getSquare(4,3));// the working capture statement thus far
-    // black.capture(field.getSquare(3,2).piece,field.getSquare(5,4));
+    black.capture(field.getSquare(8,3).piece,field.getSquare(6,5));
+    black.capture(field.getSquare(6,5).piece,field.getSquare(4,7));
+
 		int x = 4;
 		int y = 5;
 
 		Terminal terminal = TerminalFacade.createTextTerminal();
-    // screen screen=new Screen(terminal);
-		// screen.startScreen();
+    screen screen=new Screen(terminal);
+		screen.startScreen();
 		terminal.enterPrivateMode();
 
 		TerminalSize size = terminal.getTerminalSize();
@@ -207,6 +203,7 @@ public class Checkers{
 
 
       Key key = terminal.readInput();
+      // Key key = screen.readInput();
 
 			if (key != null)
 			{
@@ -395,7 +392,7 @@ public class Checkers{
 				}
 
         if (key.getKind() == Key.Kind.Escape) {
-          // screen.stopScreen();
+          screen.stopScreen();
 					terminal.exitPrivateMode();
 					running = false;
 				}
@@ -419,6 +416,6 @@ public class Checkers{
 
 			}
 		}
-    // screen.refresh();
+    screen.refresh();
 	}
 }
