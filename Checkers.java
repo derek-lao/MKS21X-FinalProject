@@ -45,7 +45,7 @@ public class Checkers{
     red.move(field.getSquare(6,5).piece,field.getSquare(7,4));
     red.move(field.getSquare(4,7).piece,field.getSquare(5,6));
     red.myTurn=!red.myTurn;
-    // black.myTurn=!black.myTurn;
+    black.myTurn=!black.myTurn;
     black.move(field.getSquare(2,3).piece,field.getSquare(1,4));
     // black.capture(field.getSquare(8,3).piece,field.getSquare(6,5));
     // red.move(field.getSquare(5,6).piece,field.getSquare(6,5));
@@ -113,7 +113,7 @@ public class Checkers{
         putString(1,18,terminal,"Choose one of the options below                                                   ");
         putString(1,20,terminal,"Press the key that corresponds with the option to activate                        ");
         putString(1,21,terminal,"Start new game (Press p)                                                          ");
-        putString(1,22,terminal,"Continue game  (Press c)                                                          ");
+        putString(1,22,terminal,"Continue game  (Press g)                                                          ");
         putString(1,13,terminal,"                                                                                  ");
         putString(1,14,terminal,"                                                                                  ");
       }
@@ -224,7 +224,7 @@ public class Checkers{
             }
             menuMode=!menuMode;
           }
-          if(key.getCharacter()=='c')
+          if(key.getCharacter()=='g')
           {
             terminal.applyForegroundColor(Terminal.Color.WHITE);
             terminal.applyBackgroundColor(Terminal.Color.BLACK);
