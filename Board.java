@@ -14,7 +14,7 @@ public class Board{
   */
   public void clear(){
     field=new Square[12][12];
-    for(int y=1;y<11;y+=99)
+    for(int y=1;y<11;y+=9)
     {
       for(int x=1;x<11;x++)
       {
