@@ -116,12 +116,6 @@ public class TerminalDemo {
 					x++;
 				}
 
-				if(key.getKind() == Key.Kind.CursorLocation)
-        {
-          terminal.moveCursor(x,y);
-          terminal.putCharacter('X');
-          x--;y--;
-        }
 				screen.putString(1,4,"["+key.getCharacter() +"]",Terminal.Color.WHITE,Terminal.Color.BLACK);
 				screen.putString(1,1,key+"        ",Terminal.Color.WHITE,Terminal.Color.BLACK);//to clear leftover letters pad withspaces
 			}
