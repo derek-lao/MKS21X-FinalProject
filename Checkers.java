@@ -241,6 +241,8 @@ public class Checkers{
           if(key.getCharacter()=='p')
           {
             field.setup();
+            redPiecesLeft=12;
+            blackPiecesLeft=12;
             terminal.applyForegroundColor(Terminal.Color.WHITE);
             terminal.applyBackgroundColor(Terminal.Color.BLACK);
             for(int i=16;i<23;i++)
