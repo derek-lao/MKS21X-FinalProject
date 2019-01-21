@@ -18,12 +18,12 @@ import com.googlecode.lanterna.screen.*;
 
 
 public class TerminalDemo {
-	// public static void putString(int r, int c, String s, Terminal.Color f, Terminal.Color b){
-	// 	moveCursor(r,c);
-	// 	for(int i = 0; i < s.length();i++){
-	// 		putCharacter(s.charAt(i));
-	// 	}
-	// }
+	public static void putString(int r, int c, Terminal t, String s, Terminal.Color f, Terminal.Color b){
+		t.moveCursor(r,c);
+		for(int i = 0; i < s.length();i++){
+			t.putCharacter(s.charAt(i));
+		}
+	}
 	public static void main(String[] args) {
 
 
@@ -116,8 +116,8 @@ public class TerminalDemo {
 					x++;
 				}
 
-				screen.putString(1,4,"["+key.getCharacter() +"]",Terminal.Color.WHITE,Terminal.Color.RED);
-				screen.putString(1,1,key+"        ",Terminal.Color.WHITE,Terminal.Color.RED);//to clear leftover letters pad withspaces
+				putString(1,4,terminal,"["+key.getCharacter() +"]",Terminal.Color.WHITE,Terminal.Color.RED);
+				putString(1,1,terminal,key+"        ",Terminal.Color.WHITE,Terminal.Color.RED);//to clear leftover letters pad withspaces
 			}
 
 			//DO EVEN WHEN NO KEY PRESSED:
@@ -127,11 +127,11 @@ public class TerminalDemo {
 			terminal.applyForegroundColor(Terminal.Color.GREEN);
 			terminal.putCharacter('H');
 			terminal.putCharacter('I');
-			screen.putString(1,2,"Milliseconds since start of program: "+millis,Terminal.Color.WHITE,Terminal.Color.RED);
+			putString(1,2,terminal,"Milliseconds since start of program: "+millis,Terminal.Color.WHITE,Terminal.Color.RED);
 			if(millis/1000 > lastSecond){
 				lastSecond = millis / 1000;
 				//one second has passed.
-				screen.putString(1,3,"Seconds since start of program: "+lastSecond,Terminal.Color.WHITE,Terminal.Color.RED);
+				putString(1,3,terminal,"Seconds since start of program: "+lastSecond,Terminal.Color.WHITE,Terminal.Color.RED);
 
 			}
 		}
