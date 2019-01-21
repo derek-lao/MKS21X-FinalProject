@@ -165,37 +165,57 @@ public class Checkers{
         {
           if(key.getKind()==Key.Kind.Enter)
           {
-            terminal.moveCursor(x,y);
-            currentSquare=field.getSquare(x-3,y-4);
-            if(currentSquare.piece!=null)
+            if(!hasCaptured)
             {
-              currentPiece=currentSquare.piece;
+              terminal.moveCursor(x,y);
+              currentSquare=field.getSquare(x-3,y-4);
+              if(currentSquare.piece!=null)
+              {
+                currentPiece=currentSquare.piece;
+              }
+              putString(1,16,terminal,"Piece selected");
+              putString(1,17,terminal,"Square coordinates at the time of piece selection: "+currentSquare.getX()+","+currentSquare.getY());
+              putString(1,18,terminal,"Piece selected: "+currentPiece);
             }
-            putString(1,16,terminal,"Piece selected");
-            putString(1,17,terminal,"Square coordinates: "+currentSquare.getX()+","+currentSquare.getY());
-            putString(1,18,terminal,"Piece selected: "+currentPiece);
+            if(hasCaptured)
+            {
+              terminal.moveCursor(x,y);
+              putString(1,16,terminal,"Cannot select piece because you were in the middle of capturing.                ");
+              putString(1,17,terminal,"Use arrow keys to select new capture destination, then press c to capture       ");
+              putString(1,18,terminal,"Press e to end turn                                                             ");
+            }
           }
           if(key.getCharacter()=='m')
           {
-            terminal.moveCursor(x,y);
-            currentSquare=field.getSquare(x-3,y-4);
-            if(turner.move(currentPiece,currentSquare))
+            if(!hasCaptured)
             {
-              // turner.move(currentPiece,currentSquare);
-              red.myTurn=!red.myTurn;
-              black.myTurn=!black.myTurn;
-              putString(1,16,terminal,"                                                                              ");
-              putString(1,17,terminal,"                                                                              ");
-              putString(1,18,terminal,"                                                                              ");
-              putString(1,20,terminal,"                                                                              ");
-              putString(1,21,terminal,"                                                                              ");
-              putString(1,22,terminal,"                                                                              ");
+              terminal.moveCursor(x,y);
+              currentSquare=field.getSquare(x-3,y-4);
+              if(turner.move(currentPiece,currentSquare))
+              {
+                // turner.move(currentPiece,currentSquare);
+                red.myTurn=!red.myTurn;
+                black.myTurn=!black.myTurn;
+                putString(1,16,terminal,"                                                                              ");
+                putString(1,17,terminal,"                                                                              ");
+                putString(1,18,terminal,"                                                                              ");
+                putString(1,20,terminal,"                                                                              ");
+                putString(1,21,terminal,"                                                                              ");
+                putString(1,22,terminal,"                                                                              ");
+              }
+              else
+              {
+                putString(1,20,terminal,"Square coordinates for target square: "+currentSquare.getX()+","+currentSquare.getY());
+                putString(1,21,terminal,"Piece selected to move: "+currentPiece);
+                putString(1,22,terminal,"Error: Move failed");
+              }
             }
-            else
+            if(hasCaptured)
             {
-              putString(1,20,terminal,"Square coordinates for target square: "+currentSquare.getX()+","+currentSquare.getY());
-              putString(1,21,terminal,"Piece selected to move: "+currentPiece);
-              putString(1,22,terminal,"Error: Move failed");
+              terminal.moveCursor(x,y);
+              putString(1,16,terminal,"Cannot move piece because you were in the middle of capturing.                  ");
+              putString(1,17,terminal,"Use arrow keys to select new capture destination, then press c to capture       ");
+              putString(1,18,terminal,"Press e to end turn                                                             ");
             }
           }
           if(key.getCharacter()=='c')
@@ -228,7 +248,9 @@ public class Checkers{
           }
           if(hasCaptured && turner.canCapture(currentPiece))
           {
-            putString(1,20,terminal,"You can still capture. Press e to end turn                                    ");
+            putString(1,20,terminal,"You can still capture!                                                           ");
+            putString(1,21,terminal,"Use arrow keys to select new capture destination, then press c to capture        ");
+            putString(1,22,terminal,"Press e to end turn.                                                             ");
             if(key.getCharacter()=='e')
             {
               red.myTurn=!red.myTurn;
