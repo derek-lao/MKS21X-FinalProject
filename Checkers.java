@@ -1,4 +1,4 @@
-import com.googlecode.lanterna.terminal.Terminal.SGR;
+White piecesimport com.googlecode.lanterna.terminal.Terminal.SGR;
 import com.googlecode.lanterna.TerminalFacade;
 import com.googlecode.lanterna.input.Key;
 import com.googlecode.lanterna.input.Key.Kind;
@@ -145,23 +145,25 @@ public class Checkers{
         if(redPiecesLeft==0)
         {
           putString(15,5,terminal,"Red won! Press spacebar to return to menu and start a new game.");
+          putString(16,5,terminal,"                                                               ");
         }
         if(blackPiecesLeft==0)
         {
           putString(15,5,terminal,"Black won! Press spacebar to return to menu and start a new game.");
+          putString(16,5,terminal,"                                                               ");
         }
         if(redPiecesLeft>0 && blackPiecesLeft>0)
         {
           putString(1,13,terminal,"Press spacebar to see menu.                                                      ");
           putString(1,14,terminal,"You will not lose your current game unless you select \"Start new game\"         ");
           putString(15,5,terminal,"Red pieces remaining: "+redPiecesLeft);
-          putString(15,6,terminal,"Black pieces remaining: "+blackPiecesLeft);
+          putString(15,6,terminal,"White piecesremaining: "+blackPiecesLeft);
 
 
           if(!red.myTurn)
           {
             turner=black;
-            putString(1,15,terminal,"Black to move                             ");
+            putString(1,15,terminal,"White to move                             ");
           }
           if(red.myTurn)
           {
@@ -208,7 +210,7 @@ public class Checkers{
                 if(!pieceNow.colorRed&&!pieceNow.king)
                 {
                   terminal.moveCursor(r,c);
-                  terminal.applyForegroundColor(Terminal.Color.MAGENTA);
+                  terminal.applyForegroundColor(Terminal.Color.WHITE);
                   terminal.putCharacter('\u25CF');
                 }
                 if(pieceNow.colorRed&&pieceNow.king)
@@ -220,7 +222,7 @@ public class Checkers{
                 if(!pieceNow.colorRed&&pieceNow.king)
                 {
                   terminal.moveCursor(r,c);
-                  terminal.applyForegroundColor(Terminal.Color.MAGENTA);
+                  terminal.applyForegroundColor(Terminal.Color.WHITE);
                   terminal.putCharacter('\u25CB');
                 }
               }
@@ -297,12 +299,12 @@ public class Checkers{
                   {
                     currentPiece=currentSquare.piece;
                   }
-                  putString(1,16,terminal,"Piece selected");
+                  putString(1,16,terminal,"Piece selected.");
                   putString(1,17,terminal,"Square coordinates at the time of piece selection: "+currentSquare.getX()+","+currentSquare.getY()+"           ");
-                  putString(1,18,terminal,"Piece selected: "+currentPiece+"                                                            ");
-                  putString(1,20,terminal,"                                                                              ");
-                  putString(1,21,terminal,"                                                                              ");
-                  putString(1,22,terminal,"                                                                              ");
+                  putString(1,18,terminal,"Use the arrow keys and then press enter if you want to select another piece.    ");
+                  putString(1,20,terminal,"Use arrow keys to navigate to a legal square.                                   ");
+                  putString(1,21,terminal,"Press m to move to that square if it is legal.                                  ");
+                  putString(1,22,terminal,"Press c to capture to that square if it is legal.                               ");
                 }
                 if(hasCaptured)
                 {
@@ -328,7 +330,7 @@ public class Checkers{
                     // turner.move(currentPiece,currentSquare);
                     red.myTurn=!red.myTurn;
                     black.myTurn=!black.myTurn;
-                    putString(1,16,terminal,"                                                                              ");
+                    putString(1,16,terminal,"Press enter to select a piece of your color for actions.                      ");
                     putString(1,17,terminal,"                                                                              ");
                     putString(1,18,terminal,"                                                                              ");
                     putString(1,20,terminal,"                                                                              ");
@@ -373,7 +375,7 @@ public class Checkers{
                   red.myTurn=!red.myTurn;
                   black.myTurn=!black.myTurn;
                   hasCaptured=false;
-                  putString(1,16,terminal,"                                                                              ");
+                  putString(1,16,terminal,"Press enter to select a piece of your color for actions.                      ");
                   putString(1,17,terminal,"                                                                              ");
                   putString(1,18,terminal,"                                                                              ");
                   putString(1,20,terminal,"                                                                              ");
