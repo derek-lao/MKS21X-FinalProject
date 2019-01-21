@@ -125,8 +125,8 @@ public class TerminalDemo {
 			long millis = tEnd - tStart;
 			terminal.applyBackgroundColor(Terminal.Color.RED);
 			terminal.applyForegroundColor(Terminal.Color.WHITE);
-			terminal.putCharacter(' ');
-			terminal.putCharacter(' ');
+			terminal.putCharacter('H');
+			terminal.putCharacter('I');
 			screen.putString(1,2,"Milliseconds since start of program: "+millis,Terminal.Color.WHITE,Terminal.Color.RED);
 			if(millis/1000 > lastSecond){
 				lastSecond = millis / 1000;
