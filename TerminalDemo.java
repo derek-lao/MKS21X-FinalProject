@@ -56,7 +56,7 @@ public class TerminalDemo {
 			//terminal.putCharacter(' ');
 			terminal.applyBackgroundColor(Terminal.Color.RED);
 			terminal.applyForegroundColor(Terminal.Color.GREEN);
-			terminal.applySGR(Terminal.SGR.RESET_ALL);//resets all code since the last Terminal.SGR, I think?
+			// terminal.applySGR(Terminal.SGR.RESET_ALL);//resets all code since the last Terminal.SGR, I think?
 
 
 			// terminal.moveCursor(size.getColumns()-5,5);
