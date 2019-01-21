@@ -143,15 +143,15 @@ public class Checkers{
         }
 
 
-        if(redPiecesLeft==0)
-        {
-          putString(15,5,terminal,"Red won! Press spacebar to return to menu and start a new game.");
-          putString(16,5,terminal,"                                                               ");
-        }
         if(blackPiecesLeft==0)
         {
+          putString(15,5,terminal,"Red won! Press spacebar to return to menu and start a new game.");
+          putString(15,6,terminal,"                                                               ");
+        }
+        if(redPiecesLeft==0)
+        {
           putString(15,5,terminal,"Black won! Press spacebar to return to menu and start a new game.");
-          putString(16,5,terminal,"                                                               ");
+          putString(15,6,terminal,"                                                               ");
         }
         if(redPiecesLeft>0 && blackPiecesLeft>0)
         {
