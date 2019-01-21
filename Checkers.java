@@ -71,64 +71,11 @@ public class Checkers{
     Square currentSquare=null;
     Piece currentPiece=null;
     boolean hasCaptured=false;
+    boolean menuMode=true;
 
 		while(running){
 
-      //code to create board, and set pieces
-      for(int r=4;r<12;r++)
-      {
-        for(int c=5;c<13;c++)
-        {
-          if(field.getSquare(r-3,c-4).isRed())
-          {
-            terminal.moveCursor(r,c);
-            terminal.applyForegroundColor(Terminal.Color.WHITE);
-            terminal.applyBackgroundColor(Terminal.Color.RED);
-            terminal.applySGR(Terminal.SGR.ENTER_BOLD);
-            terminal.putCharacter(' ');
-            // terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
-            // terminal.applyForegroundColor(Terminal.Color.DEFAULT);
-          }
-          if(!field.getSquare(r-3,c-4).isRed())
-          {
-            terminal.moveCursor(r,c);
-            terminal.applyForegroundColor(Terminal.Color.RED);
-            terminal.applyBackgroundColor(Terminal.Color.BLACK);
-            terminal.applySGR(Terminal.SGR.ENTER_BOLD);
-            terminal.putCharacter(' ');
-            // terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
-            // terminal.applyForegroundColor(Terminal.Color.DEFAULT);
-          }
-          if(field.getSquare(r-3,c-4).isOccupied())
-          {
-            Piece pieceNow=field.getSquare(r-3,c-4).piece;
-            if(pieceNow.colorRed&&!pieceNow.king)
-            {
-              terminal.moveCursor(r,c);
-              terminal.applyForegroundColor(Terminal.Color.RED);
-              terminal.putCharacter('\u25CF');
-            }
-            if(!pieceNow.colorRed&&!pieceNow.king)
-            {
-              terminal.moveCursor(r,c);
-              terminal.applyForegroundColor(Terminal.Color.MAGENTA);
-              terminal.putCharacter('\u25CF');
-            }
-            if(pieceNow.colorRed&&pieceNow.king)
-            {
-              terminal.moveCursor(r,c);
-              terminal.applyForegroundColor(Terminal.Color.RED);
-              terminal.putCharacter('\u25CB');
-            }
-            if(!pieceNow.colorRed&&pieceNow.king)
-            {
-              terminal.moveCursor(r,c);
-              terminal.applyForegroundColor(Terminal.Color.MAGENTA);
-              terminal.putCharacter('\u25CB');
-            }
-          }
-        }
-      }
+      //code for cursor at any moment
       terminal.moveCursor(x,y);
 			terminal.applyBackgroundColor(Terminal.Color.CYAN);//cursor background color
 			terminal.applyForegroundColor(Terminal.Color.BLACK);//cursor foreground color
@@ -140,62 +87,227 @@ public class Checkers{
 			terminal.applyForegroundColor(Terminal.Color.GREEN);
 			terminal.applySGR(Terminal.SGR.RESET_ALL);//resets all code since the last Terminal.SGR, I think?
 
-      if(!red.myTurn)
+      Key key = terminal.readInput();
+
+      if(menuMode)//permanent visual features specific to while in menu
       {
-        turner=black;
-        putString(1,15,terminal,"Black to move");
+        terminal.applyForegroundColor(Terminal.Color.YELLOW);
+        terminal.applyBackgroundColor(Terminal.Color.BLACK);
+        for(int i=5;i<16;i++)
+        {
+          putString(1,i,terminal,"                                                                                  ");
+        }
+        putString(1,16,terminal,"Welcome to the Checkers game created by Derek Lao!                                ");
+        putString(1,17,terminal,"This is a variant of checkers where capturing is not obligatory                   ");
+        putString(1,18,terminal,"Choose one of the options below                                                   ");
+        putString(1,20,terminal,"Press the key that corresponds with the option to activate                        ");
+        putString(1,21,terminal,"Start new game (Press p)                                                          ");
+        putString(1,22,terminal,"Continue game  (Press c)                                                          ");
+        putString(1,24,terminal,"                                                                                  ");
+        putString(1,25,terminal,"                                                                                  ");
       }
-      if(red.myTurn)
+
+      if(!menuMode)//permanent visual features specific to while not in menu
       {
-        turner=red;
-        putString(1,15,terminal,"Red to move            ");
+        putString(1,24,terminal,"Press spacebar to see menu.                                                      ");
+        putString(1,25,terminal,"You will not lose your current game unless you select \"Start new game\"         ");
+
+
+        if(!red.myTurn)
+        {
+          turner=black;
+          putString(1,15,terminal,"Black to move");
+        }
+        if(red.myTurn)
+        {
+          turner=red;
+          putString(1,15,terminal,"Red to move            ");
+        }
+
+
+        //code to create board, and set pieces, and continue to update board
+        for(int r=4;r<12;r++)
+        {
+          for(int c=5;c<13;c++)
+          {
+            if(field.getSquare(r-3,c-4).isRed())
+            {
+              terminal.moveCursor(r,c);
+              terminal.applyForegroundColor(Terminal.Color.WHITE);
+              terminal.applyBackgroundColor(Terminal.Color.RED);
+              terminal.applySGR(Terminal.SGR.ENTER_BOLD);
+              terminal.putCharacter(' ');
+              // terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+              // terminal.applyForegroundColor(Terminal.Color.DEFAULT);
+            }
+            if(!field.getSquare(r-3,c-4).isRed())
+            {
+              terminal.moveCursor(r,c);
+              terminal.applyForegroundColor(Terminal.Color.RED);
+              terminal.applyBackgroundColor(Terminal.Color.BLACK);
+              terminal.applySGR(Terminal.SGR.ENTER_BOLD);
+              terminal.putCharacter(' ');
+              // terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+              // terminal.applyForegroundColor(Terminal.Color.DEFAULT);
+            }
+            if(field.getSquare(r-3,c-4).isOccupied())
+            {
+              Piece pieceNow=field.getSquare(r-3,c-4).piece;
+              if(pieceNow.colorRed&&!pieceNow.king)
+              {
+                terminal.moveCursor(r,c);
+                terminal.applyForegroundColor(Terminal.Color.RED);
+                terminal.putCharacter('\u25CF');
+              }
+              if(!pieceNow.colorRed&&!pieceNow.king)
+              {
+                terminal.moveCursor(r,c);
+                terminal.applyForegroundColor(Terminal.Color.MAGENTA);
+                terminal.putCharacter('\u25CF');
+              }
+              if(pieceNow.colorRed&&pieceNow.king)
+              {
+                terminal.moveCursor(r,c);
+                terminal.applyForegroundColor(Terminal.Color.RED);
+                terminal.putCharacter('\u25CB');
+              }
+              if(!pieceNow.colorRed&&pieceNow.king)
+              {
+                terminal.moveCursor(r,c);
+                terminal.applyForegroundColor(Terminal.Color.MAGENTA);
+                terminal.putCharacter('\u25CB');
+              }
+            }
+          }
+        }
+
+
       }
-			Key key = terminal.readInput();
+
+
+
+
 
 			if (key != null)
 			{
-
-				if (key.getKind() == Key.Kind.Escape) {
-
-					terminal.exitPrivateMode();
-					running = false;
-				}
-
-        if(x>3 && x<12 && y>4 && y<13)
+        //keys to press specific to while in menu
+        if(menuMode)
         {
-          if(key.getKind()==Key.Kind.Enter)
+          if(key.getCharacter()=='p')
           {
-            if(!hasCaptured)
+            field.setup();
+            for(int i=16;i<26;i++)
             {
-              terminal.moveCursor(x,y);
-              currentSquare=field.getSquare(x-3,y-4);
-              if(currentSquare.piece!=null)
-              {
-                currentPiece=currentSquare.piece;
-              }
-              putString(1,16,terminal,"Piece selected");
-              putString(1,17,terminal,"Square coordinates at the time of piece selection: "+currentSquare.getX()+","+currentSquare.getY());
-              putString(1,18,terminal,"Piece selected: "+currentPiece);
+              putString(1,i,terminal,"                                                                                  ");
             }
-            if(hasCaptured)
-            {
-              terminal.moveCursor(x,y);
-              putString(1,16,terminal,"Cannot select piece because you were in the middle of capturing.                ");
-              putString(1,17,terminal,"Use arrow keys to select new capture destination, then press c to capture       ");
-              putString(1,18,terminal,"Press e to end turn                                                             ");
-            }
+            menuMode=!menuMode;
           }
-          if(key.getCharacter()=='m')
+          if(key.getCharacter()=='c')
           {
-            if(!hasCaptured)
+            for(int i=16;i<26;i++)
+            {
+              putString(1,i,terminal,"                                                                                  ");
+            }
+            if(hasCaptured && turner.canCapture(currentPiece))
+            {
+              putString(1,20,terminal,"You can still capture!                                                           ");
+              putString(1,21,terminal,"Use arrow keys to select new capture destination, then press c to capture        ");
+              putString(1,22,terminal,"Press e to end turn.                                                             ");
+            }
+            menuMode=!menuMode;
+          }
+        }
+
+        //keys to press specific to when in game, not in menu
+				if(!menuMode)
+        {
+          if(key.getCharacter()==' ')
+          {
+            menuMode=!menuMode;
+          }
+
+          if(x>3 && x<12 && y>4 && y<13)
+          {
+            if(key.getKind()==Key.Kind.Enter)
+            {
+              if(!hasCaptured)
+              {
+                terminal.moveCursor(x,y);
+                currentSquare=field.getSquare(x-3,y-4);
+                if(currentSquare.piece!=null)
+                {
+                  currentPiece=currentSquare.piece;
+                }
+                putString(1,16,terminal,"Piece selected");
+                putString(1,17,terminal,"Square coordinates at the time of piece selection: "+currentSquare.getX()+","+currentSquare.getY());
+                putString(1,18,terminal,"Piece selected: "+currentPiece);
+                putString(1,20,terminal,"                                                                              ");
+                putString(1,21,terminal,"                                                                              ");
+                putString(1,22,terminal,"                                                                              ");
+              }
+              if(hasCaptured)
+              {
+                terminal.moveCursor(x,y);
+                putString(1,16,terminal,"Cannot select piece because you were in the middle of capturing.                ");
+                putString(1,17,terminal,"Use arrow keys to select new capture destination, then press c to capture       ");
+                putString(1,18,terminal,"Press e to end turn                                                             ");
+                putString(1,20,terminal,"                                                                                ");
+                putString(1,21,terminal,"                                                                                ");
+                putString(1,22,terminal,"                                                                                ");
+              }
+            }
+            if(key.getCharacter()=='m')
+            {
+              if(!hasCaptured)
+              {
+                terminal.moveCursor(x,y);
+                currentSquare=field.getSquare(x-3,y-4);
+                if(turner.move(currentPiece,currentSquare))
+                {
+                  // turner.move(currentPiece,currentSquare);
+                  red.myTurn=!red.myTurn;
+                  black.myTurn=!black.myTurn;
+                  putString(1,16,terminal,"                                                                              ");
+                  putString(1,17,terminal,"                                                                              ");
+                  putString(1,18,terminal,"                                                                              ");
+                  putString(1,20,terminal,"                                                                              ");
+                  putString(1,21,terminal,"                                                                              ");
+                  putString(1,22,terminal,"                                                                              ");
+                }
+                else
+                {
+                  putString(1,20,terminal,"Square coordinates for target square: "+currentSquare.getX()+","+currentSquare.getY());
+                  putString(1,21,terminal,"Piece selected to move: "+currentPiece);
+                  putString(1,22,terminal,"Error: Move failed");
+                }
+              }
+              if(hasCaptured)
+              {
+                terminal.moveCursor(x,y);
+                putString(1,16,terminal,"Cannot move piece because you were in the middle of capturing.                  ");
+                putString(1,17,terminal,"Use arrow keys to select new capture destination, then press c to capture       ");
+                putString(1,18,terminal,"Press e to end turn                                                             ");
+              }
+            }
+            if(key.getCharacter()=='c')
             {
               terminal.moveCursor(x,y);
               currentSquare=field.getSquare(x-3,y-4);
-              if(turner.move(currentPiece,currentSquare))
+              if(turner.capture(currentPiece,currentSquare))
               {
-                // turner.move(currentPiece,currentSquare);
+                hasCaptured=true;
+              }
+              else
+              {
+                putString(1,20,terminal,"Square coordinates for target square to capture to: "+currentSquare.getX()+","+currentSquare.getY());
+                putString(1,21,terminal,"Piece selected to move for capture: "+currentPiece);
+                putString(1,22,terminal,"Error: Capture failed");
+              }
+              if(hasCaptured&&!turner.canCapture(currentPiece))
+              {
                 red.myTurn=!red.myTurn;
                 black.myTurn=!black.myTurn;
+                hasCaptured=false;
                 putString(1,16,terminal,"                                                                              ");
                 putString(1,17,terminal,"                                                                              ");
                 putString(1,18,terminal,"                                                                              ");
@@ -203,69 +315,29 @@ public class Checkers{
                 putString(1,21,terminal,"                                                                              ");
                 putString(1,22,terminal,"                                                                              ");
               }
-              else
+
+            }
+            if(hasCaptured && turner.canCapture(currentPiece))
+            {
+              putString(1,20,terminal,"You can still capture!                                                           ");
+              putString(1,21,terminal,"Use arrow keys to select new capture destination, then press c to capture        ");
+              putString(1,22,terminal,"Press e to end turn.                                                             ");
+              if(key.getCharacter()=='e')
               {
-                putString(1,20,terminal,"Square coordinates for target square: "+currentSquare.getX()+","+currentSquare.getY());
-                putString(1,21,terminal,"Piece selected to move: "+currentPiece);
-                putString(1,22,terminal,"Error: Move failed");
+                red.myTurn=!red.myTurn;
+                black.myTurn=!black.myTurn;
+                putString(1,16,terminal,"                                                                              ");
+                putString(1,17,terminal,"                                                                              ");
+                putString(1,18,terminal,"                                                                              ");
+                putString(1,20,terminal,"Turn ended. To check whose turn it is, look four lines above.                 ");
+                putString(1,21,terminal,"                                                                              ");
+                putString(1,22,terminal,"                                                                              ");
               }
             }
-            if(hasCaptured)
-            {
-              terminal.moveCursor(x,y);
-              putString(1,16,terminal,"Cannot move piece because you were in the middle of capturing.                  ");
-              putString(1,17,terminal,"Use arrow keys to select new capture destination, then press c to capture       ");
-              putString(1,18,terminal,"Press e to end turn                                                             ");
-            }
           }
-          if(key.getCharacter()=='c')
-          {
-            terminal.moveCursor(x,y);
-            currentSquare=field.getSquare(x-3,y-4);
-            if(turner.capture(currentPiece,currentSquare))
-            {
-              hasCaptured=true;
-            }
-            else
-            {
-              putString(1,20,terminal,"Square coordinates for target square to capture to: "+currentSquare.getX()+","+currentSquare.getY());
-              putString(1,21,terminal,"Piece selected to move for capture: "+currentPiece);
-              putString(1,22,terminal,"Error: Capture failed");
-            }
-            if(hasCaptured&&!turner.canCapture(currentPiece))
-            {
-              red.myTurn=!red.myTurn;
-              black.myTurn=!black.myTurn;
-              hasCaptured=false;
-              putString(1,16,terminal,"                                                                              ");
-              putString(1,17,terminal,"                                                                              ");
-              putString(1,18,terminal,"                                                                              ");
-              putString(1,20,terminal,"                                                                              ");
-              putString(1,21,terminal,"                                                                              ");
-              putString(1,22,terminal,"                                                                              ");
-            }
-
-          }
-          if(hasCaptured && turner.canCapture(currentPiece))
-          {
-            putString(1,20,terminal,"You can still capture!                                                           ");
-            putString(1,21,terminal,"Use arrow keys to select new capture destination, then press c to capture        ");
-            putString(1,22,terminal,"Press e to end turn.                                                             ");
-            if(key.getCharacter()=='e')
-            {
-              red.myTurn=!red.myTurn;
-              black.myTurn=!black.myTurn;
-              putString(1,16,terminal,"                                                                              ");
-              putString(1,17,terminal,"                                                                              ");
-              putString(1,18,terminal,"                                                                              ");
-              putString(1,20,terminal,"Turn ended. To check whose turn it is, look four lines above.                 ");
-              putString(1,21,terminal,"                                                                              ");
-              putString(1,22,terminal,"                                                                              ");
-            }
-          }
-
         }
 
+        // these are keys regardless of menuMode or not
 				if (key.getKind() == Key.Kind.ArrowLeft) {
 					terminal.moveCursor(x,y);
 					terminal.putCharacter(' ');
@@ -289,13 +361,13 @@ public class Checkers{
 					terminal.putCharacter(' ');
 					y++;
 				}
-				//space moves it diagonally
-				if (key.getCharacter() == ' ') {
-					terminal.moveCursor(x,y);
-					terminal.putCharacter(' ');
-					y++;
-					x++;
+
+        if (key.getKind() == Key.Kind.Escape) {
+
+					terminal.exitPrivateMode();
+					running = false;
 				}
+
 				putString(1,4,terminal,"["+key.getCharacter() +"]");
 				putString(1,1,terminal,key+"        ");//to clear leftover letters pad withspaces
 			}
