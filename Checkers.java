@@ -59,7 +59,7 @@ public class Checkers{
 
 		Terminal terminal = TerminalFacade.createTextTerminal();
     Screen screen=new Screen(terminal);
-		// screen.startScreen();
+		screen.startScreen();
 		terminal.enterPrivateMode();
 
 		TerminalSize size = terminal.getTerminalSize();
@@ -385,7 +385,7 @@ public class Checkers{
 				}
 
         if (key.getKind() == Key.Kind.Escape) {
-
+          screen.stopScreen();
 					terminal.exitPrivateMode();
 					running = false;
 				}
@@ -407,6 +407,6 @@ public class Checkers{
 
 			}
 		}
-    // screen.refresh();
+    screen.refresh();
 	}
 }
