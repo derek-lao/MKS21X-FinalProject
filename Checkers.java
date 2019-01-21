@@ -199,7 +199,7 @@ public class Checkers{
                 terminal.applySGR(Terminal.SGR.ENTER_BOLD);
                 terminal.putCharacter(' ');
               }
-              if(!field.getSquare(r-3,c-4).isRed())
+              if(!field.getSquare(r-3,c-4).isRed()&&!field.getSquare(r-3,c-4).isOccupied())
               {
                 terminal.moveCursor(r,c);
                 terminal.applyForegroundColor(Terminal.Color.RED);
@@ -207,7 +207,7 @@ public class Checkers{
                 terminal.applySGR(Terminal.SGR.ENTER_BOLD);
                 terminal.putCharacter(' ');
               }
-              if(field.getSquare(r-3,c-4).isOccupied())
+              if(!field.getSquare(r-3,c-4).isRed()&&field.getSquare(r-3,c-4).isOccupied())
               {
                 Piece pieceNow=field.getSquare(r-3,c-4).piece;
                 if(pieceNow.colorRed&&!pieceNow.king)
