@@ -63,9 +63,10 @@ public class Checkers{
     red.myTurn=!red.myTurn;
     black.myTurn=!black.myTurn;
     black.move(field.getSquare(4,7).piece,field.getSquare(5,8));
-    black.capture(field.getSquare(5,8).piece,field.getSquare(7,6));
-    redPiecesLeft=9;
+    redPiecesLeft=1;
     blackPiecesLeft=12;
+    // black.capture(field.getSquare(5,8).piece,field.getSquare(7,6));
+
 
 		int x = 4;
 		int y = 5;
@@ -157,7 +158,7 @@ public class Checkers{
           putString(1,13,terminal,"Press spacebar to see menu.                                                      ");
           putString(1,14,terminal,"You will not lose your current game unless you select \"Start new game\"         ");
           putString(15,5,terminal,"Red pieces remaining: "+redPiecesLeft);
-          putString(15,6,terminal,"White piecesremaining: "+blackPiecesLeft);
+          putString(15,6,terminal,"White pieces remaining: "+blackPiecesLeft);
 
 
           if(!red.myTurn)
