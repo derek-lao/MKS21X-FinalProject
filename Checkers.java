@@ -91,6 +91,17 @@ public class Checkers{
 
       if(menuMode)//permanent visual features specific to while in menu
       {
+        terminal.applyForegroundColor(Terminal.Color.WHITE);
+        terminal.applyBackgroundColor(Terminal.Color.BLACK);
+        long tEnd = System.currentTimeMillis();
+  			long millis = tEnd - tStart;
+  			putString(1,2,terminal,"Milliseconds since start of program: "+millis);
+  			if(millis/1000 > lastSecond){
+  				lastSecond = millis / 1000;
+  				//one second has passed.
+  				putString(1,3,terminal,"Seconds since start of program: "+lastSecond);
+        }
+
         terminal.applyForegroundColor(Terminal.Color.YELLOW);
         terminal.applyBackgroundColor(Terminal.Color.BLACK);
         for(int i=5;i<16;i++)
@@ -109,6 +120,16 @@ public class Checkers{
 
       if(!menuMode)//permanent visual features specific to while not in menu
       {
+        terminal.applyForegroundColor(Terminal.Color.WHITE);
+        terminal.applyBackgroundColor(Terminal.Color.BLACK);
+        long tEnd = System.currentTimeMillis();
+  			long millis = tEnd - tStart;
+  			putString(1,2,terminal,"Milliseconds since start of program: "+millis);
+  			if(millis/1000 > lastSecond){
+  				lastSecond = millis / 1000;
+  				//one second has passed.
+  				putString(1,3,terminal,"Seconds since start of program: "+lastSecond);
+        }
         putString(1,24,terminal,"Press spacebar to see menu.                                                      ");
         putString(1,25,terminal,"You will not lose your current game unless you select \"Start new game\"         ");
 
@@ -368,6 +389,8 @@ public class Checkers{
 					running = false;
 				}
 
+        terminal.applyForegroundColor(Terminal.Color.WHITE);
+        terminal.applyBackgroundColor(Terminal.Color.BLACK);
 				putString(1,4,terminal,"["+key.getCharacter() +"]");
 				putString(1,1,terminal,key+"        ");//to clear leftover letters pad withspaces
 			}
