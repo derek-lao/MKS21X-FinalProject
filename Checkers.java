@@ -98,7 +98,7 @@ public class Checkers{
 			terminal.applySGR(Terminal.SGR.RESET_ALL);//resets all code since the last Terminal.SGR, I think?
 
 
-
+      putString(1,23,terminal,"Press escape to close and quit the game.");
       if(menuMode)//permanent visual features specific to while in menu
       {
         terminal.applyForegroundColor(Terminal.Color.WHITE);
@@ -144,11 +144,11 @@ public class Checkers{
 
         if(redPiecesLeft==0)
         {
-          putString(15,5,terminal,"Red has won! Press spacebar to return to menu and start a new game.              ");
+          putString(15,5,terminal,"Red won! Press spacebar to return to menu and start a new game.");
         }
         if(blackPiecesLeft==0)
         {
-          putString(15,5,terminal,"Black has won! Press spacebar to return to menu and start a new game.            ");
+          putString(15,5,terminal,"Black won! Press spacebar to return to menu and start a new game.");
         }
         if(redPiecesLeft>0 && blackPiecesLeft>0)
         {
