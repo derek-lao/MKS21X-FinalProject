@@ -95,11 +95,11 @@ public class Checkers{
         terminal.applyBackgroundColor(Terminal.Color.BLACK);
         long tEnd = System.currentTimeMillis();
   			long millis = tEnd - tStart;
-  			putString(1,2,terminal,"Milliseconds since start of program: "+millis);
+  			putString(1,2,terminal,"Milliseconds since start of program: "+millis+"                                         ");
   			if(millis/1000 > lastSecond){
   				lastSecond = millis / 1000;
   				//one second has passed.
-  				putString(1,3,terminal,"Seconds since start of program: "+lastSecond);
+  				putString(1,3,terminal,"Seconds since start of program: "+lastSecond+"                                        ");
         }
 
         terminal.applyForegroundColor(Terminal.Color.YELLOW);
@@ -137,12 +137,12 @@ public class Checkers{
         if(!red.myTurn)
         {
           turner=black;
-          putString(1,15,terminal,"Black to move");
+          putString(1,15,terminal,"Black to move                             ");
         }
         if(red.myTurn)
         {
           turner=red;
-          putString(1,15,terminal,"Red to move            ");
+          putString(1,15,terminal,"Red to move                               ");
         }
 
 
@@ -260,8 +260,8 @@ public class Checkers{
                   currentPiece=currentSquare.piece;
                 }
                 putString(1,16,terminal,"Piece selected");
-                putString(1,17,terminal,"Square coordinates at the time of piece selection: "+currentSquare.getX()+","+currentSquare.getY());
-                putString(1,18,terminal,"Piece selected: "+currentPiece);
+                putString(1,17,terminal,"Square coordinates at the time of piece selection: "+currentSquare.getX()+","+currentSquare.getY()+"           ");
+                putString(1,18,terminal,"Piece selected: "+currentPiece+"                                                            ");
                 putString(1,20,terminal,"                                                                              ");
                 putString(1,21,terminal,"                                                                              ");
                 putString(1,22,terminal,"                                                                              ");
@@ -297,9 +297,9 @@ public class Checkers{
                 }
                 else
                 {
-                  putString(1,20,terminal,"Square coordinates for target square: "+currentSquare.getX()+","+currentSquare.getY());
-                  putString(1,21,terminal,"Piece selected to move: "+currentPiece);
-                  putString(1,22,terminal,"Error: Move failed");
+                  putString(1,20,terminal,"Square coordinates for target square: "+currentSquare.getX()+","+currentSquare.getY()+"            ");
+                  putString(1,21,terminal,"Piece selected to move: "+currentPiece+"                  ");
+                  putString(1,22,terminal,"Error: Move failed                                                            ");
                 }
               }
               if(hasCaptured)
@@ -320,9 +320,9 @@ public class Checkers{
               }
               else
               {
-                putString(1,20,terminal,"Square coordinates for target square to capture to: "+currentSquare.getX()+","+currentSquare.getY());
-                putString(1,21,terminal,"Piece selected to move for capture: "+currentPiece);
-                putString(1,22,terminal,"Error: Capture failed");
+                putString(1,20,terminal,"Square coordinates for target square to capture to: "+currentSquare.getX()+","+currentSquare.getY()+"               ");
+                putString(1,21,terminal,"Piece selected to move for capture: "+currentPiece+"                                        ");
+                putString(1,22,terminal,"Error: Capture failed                                                        ");
               }
               if(hasCaptured&&!turner.canCapture(currentPiece))
               {
@@ -398,11 +398,11 @@ public class Checkers{
 			//DO EVEN WHEN NO KEY PRESSED:
 			long tEnd = System.currentTimeMillis();
 			long millis = tEnd - tStart;
-			putString(1,2,terminal,"Milliseconds since start of program: "+millis);
+			putString(1,2,terminal,"Milliseconds since start of program: "+millis+"                ");
 			if(millis/1000 > lastSecond){
 				lastSecond = millis / 1000;
 				//one second has passed.
-				putString(1,3,terminal,"Seconds since start of program: "+lastSecond);
+				putString(1,3,terminal,"Seconds since start of program: "+lastSecond+"                ");
 
 			}
 		}
