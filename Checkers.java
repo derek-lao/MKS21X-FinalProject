@@ -11,6 +11,7 @@ import com.googlecode.lanterna.input.InputDecoder;
 import com.googlecode.lanterna.input.InputProvider;
 import com.googlecode.lanterna.input.Key;
 import com.googlecode.lanterna.input.KeyMappingProfile;
+import com.googlecode.lanterna.screen.*;
 
 
 public class Checkers{
@@ -57,7 +58,8 @@ public class Checkers{
 		int y = 5;
 
 		Terminal terminal = TerminalFacade.createTextTerminal();
-    // Screen screen=new Screen(terminal);
+    Screen screen=new Screen(terminal);
+		// screen.startScreen();
 		terminal.enterPrivateMode();
 
 		TerminalSize size = terminal.getTerminalSize();

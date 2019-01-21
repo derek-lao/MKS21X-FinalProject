@@ -74,7 +74,7 @@ public class TerminalDemo {
 			// terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
 			// terminal.applyForegroundColor(Terminal.Color.DEFAULT);
 
-			Key key = screen.readInput();
+			Key key = terminal.readInput();
 
 			if (key != null)
 			{
