@@ -125,7 +125,6 @@ public class TerminalDemo {
 			long millis = tEnd - tStart;
 			terminal.applyBackgroundColor(Terminal.Color.RED);
 			terminal.applyForegroundColor(Terminal.Color.WHITE);
-			terminal.moveCursor(1,2);
 			terminal.putCharacter(' ');
 			terminal.putCharacter(' ');
 			screen.putString(1,2,"Milliseconds since start of program: "+millis,Terminal.Color.WHITE,Terminal.Color.RED);
