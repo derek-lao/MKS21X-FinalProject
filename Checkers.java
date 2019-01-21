@@ -87,7 +87,7 @@ public class Checkers{
 			terminal.applyForegroundColor(Terminal.Color.GREEN);
 			terminal.applySGR(Terminal.SGR.RESET_ALL);//resets all code since the last Terminal.SGR, I think?
 
-      Key key = terminal.readInput();
+
 
       if(menuMode)//permanent visual features specific to while in menu
       {
@@ -206,8 +206,7 @@ public class Checkers{
       }
 
 
-
-
+      Key key = terminal.readInput();
 
 			if (key != null)
 			{
