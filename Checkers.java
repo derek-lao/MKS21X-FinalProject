@@ -354,13 +354,8 @@ public class Checkers{
                 currentSquare=field.getSquare(x-3,y-4);
                 if(turner.capture(currentPiece,currentSquare))
                 {
-                  switch(turner)
-                  {
-                    case red:   blackPiecesLeft--;
-                                break;
-                    case black: redPiecesLeft--;
-                                break;
-                  }
+                  if(turner==red)   blackPiecesLeft--;
+                  if(turner==black) redPiecesLeft--;
                   hasCaptured=true;
                 }
                 else
