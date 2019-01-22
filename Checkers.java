@@ -48,23 +48,21 @@ public class Checkers{
     // set of moves for early testing
     field.setup();
     red.move(field.getSquare(5,6).piece,field.getSquare(6,5));
-    red.move(field.getSquare(6,5).piece,field.getSquare(7,4));
-    red.move(field.getSquare(4,7).piece,field.getSquare(5,6));
     red.myTurn=!red.myTurn;
     black.myTurn=!black.myTurn;
-    black.move(field.getSquare(2,3).piece,field.getSquare(1,4));
-    black.capture(field.getSquare(8,3).piece,field.getSquare(6,5));
-    black.capture(field.getSquare(6,5).piece,field.getSquare(4,7));
+    black.move(field.getSquare(6,3).piece,field.getSquare(5,4));
+    black.move(field.getSquare(5,4).piece,field.getSquare(4,5));
+    black.move(field.getSquare(4,5).piece,field.getSquare(5,6));
+    black.move(field.getSquare(7,2).piece,field.getSquare(6,3));
+    black.move(field.getSquare(6,3).piece,field.getSquare(5,4));
+    black.move(field.getSquare(8,1).piece,field.getSquare(7,2));
     red.myTurn=!red.myTurn;
     black.myTurn=!black.myTurn;
-    red.move(field.getSquare(6,7).piece,field.getSquare(5,6));
-    red.move(field.getSquare(5,8).piece,field.getSquare(6,7));
-    red.move(field.getSquare(7,6).piece,field.getSquare(8,5));
-    red.myTurn=!red.myTurn;
-    black.myTurn=!black.myTurn;
-    black.move(field.getSquare(4,7).piece,field.getSquare(5,8));
-    redPiecesLeft=1;
-    blackPiecesLeft=1;
+    red.capture(field.getSquare(6,7).piece,field.getSquare(4,5));
+    red.capture(field.getSquare(4,5).piece,field.getSquare(6,3));
+    red.capture(field.getSquare(6,3).piece,field.getSquare(8,1));
+    redPiecesLeft=12;
+    blackPiecesLeft=9;
     // black.capture(field.getSquare(5,8).piece,field.getSquare(7,6));
 
 
