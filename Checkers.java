@@ -64,7 +64,7 @@ public class Checkers{
     black.myTurn=!black.myTurn;
     black.move(field.getSquare(4,7).piece,field.getSquare(5,8));
     redPiecesLeft=1;
-    blackPiecesLeft=12;
+    blackPiecesLeft=1;
     // black.capture(field.getSquare(5,8).piece,field.getSquare(7,6));
 
 
