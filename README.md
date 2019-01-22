@@ -1,12 +1,12 @@
 # MKS21X-FinalProject
 
-Welcome to Checkers, written by Derek Lao. This is a variant of checkers where capturing is not obligatory.
-
+Welcome to Checkers, written by Derek Lao. This is a variant of checkers where capturing is not obligatory. There is nothing stopping the players from playing in a fashion where capturing is obligatory, it is just that the software will not force players to make a capture when a capture is possible.
+****************************************************************************************************************************************
 Instructions to compile and run:
 In terminal, while in this directory, type:  javac -cp lanterna.jar:. Checkers.java
 Then, type: java -cp lanterna.jar:. Checkers
 There! Just follow the instructions on the screen!
-
+****************************************************************************************************************************************
 Rules of the game:
 Every player begins with 12 pieces on predetermined squares of the board. 
 
@@ -19,14 +19,31 @@ Similar to movement, every turn by a player, one of their pieces may capture an 
 Becoming King:
 When a piece reaches the end of the board respective to the player (as mentioned above), a piece becomes king. Once a piece becomes king, it remains king until captured until the game ends. A non-king may not move backwards in any way (movement or capturing), while a king may move backwards (movement or capturing)
 
+****************************************************************************************************************************************
+Keystrokes
 
 Follow the keystrokes to progress through the game.
 General keystrokes:
+
+Whether game is in progress or not:
+
+ArrowUp, ArrowDown, ArrowLeft, ArrowRight - Move cursor up, down, left, or right respectively
+Esc - Quit game
+
+While game in progress:
 Enter - select piece
 m - move piece to a designated square. This can only work if a piece has been selected (through the use of the enter key)
 c - capture piece. The Piece will move to the square it should move to after capture. Again, this only works if a piece has been selected. This also moves if the piece has already made a capture in the same turn.
+e - if in the middle of a capture sequence and the active player desires to end their turn, press this key to do so
+spacebar - to pause game and go into menu
 
+While in menu:
+p - start new game
+g - continue game
 
+If the game has ended:
+spacebar - go into menu
+****************************************************************************************************************************************
 Development Log: 
 1/4:   Created repository
 1/5:   Added class shell for Square class
