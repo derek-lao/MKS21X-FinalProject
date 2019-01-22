@@ -214,24 +214,28 @@ public class Checkers{
                 {
                   terminal.moveCursor(r,c);
                   terminal.applyForegroundColor(Terminal.Color.RED);
+                  terminal.applyBackgroundColor(Terminal.Color.BLACK);
                   terminal.putCharacter('\u25CF');
                 }
                 if(!pieceNow.colorRed&&!pieceNow.king)
                 {
                   terminal.moveCursor(r,c);
                   terminal.applyForegroundColor(Terminal.Color.WHITE);
+                  terminal.applyBackgroundColor(Terminal.Color.BLACK);
                   terminal.putCharacter('\u25CF');
                 }
                 if(pieceNow.colorRed&&pieceNow.king)
                 {
                   terminal.moveCursor(r,c);
                   terminal.applyForegroundColor(Terminal.Color.RED);
+                  terminal.applyBackgroundColor(Terminal.Color.BLACK);
                   terminal.putCharacter('\u25CB');
                 }
                 if(!pieceNow.colorRed&&pieceNow.king)
                 {
                   terminal.moveCursor(r,c);
                   terminal.applyForegroundColor(Terminal.Color.WHITE);
+                  terminal.applyBackgroundColor(Terminal.Color.BLACK);
                   terminal.putCharacter('\u25CB');
                 }
               }
