@@ -62,7 +62,7 @@ public class Checkers{
     red.capture(field.getSquare(4,5).piece,field.getSquare(6,3));
     red.capture(field.getSquare(6,3).piece,field.getSquare(8,1));
     redPiecesLeft=12;
-    blackPiecesLeft=9;
+    blackPiecesLeft=1;
     // black.capture(field.getSquare(5,8).piece,field.getSquare(7,6));
 
 
