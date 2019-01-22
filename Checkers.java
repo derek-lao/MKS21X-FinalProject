@@ -168,7 +168,7 @@ public class Checkers{
           putString(1,13,terminal,"Press spacebar to see menu.                                            ");
           putString(1,14,terminal,"You will not lose your current game unless you select \"Start new game\"  ");
           putString(14,5,terminal,"Red pieces remaining: "+redPiecesLeft+"     ");
-          putString(14,6,terminal,"White pieces remaining: "+blackPiecesLeft)+"     ");
+          putString(14,6,terminal,"White pieces remaining: "+blackPiecesLeft+"     ");
 
 
           if(!red.myTurn)
