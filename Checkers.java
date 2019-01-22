@@ -145,20 +145,22 @@ public class Checkers{
 
         if(blackPiecesLeft==0)
         {
+          putString(1,4,terminal,"                                                                            ");
           putString(1,5,terminal,"Red won! Press spacebar to return to menu and start a new game.     ");
-          putString(1,6,terminal,"                                                                    ");
+          putString(1,6,terminal,"Thanks for playing!                                                 ");
           for(int i=7;i<23;i++)
           {
-            putString(1,i,terminal,"                                                                  ");
+            putString(1,i,terminal,"                                                                           ");
           }
         }
         if(redPiecesLeft==0)
         {
+          putString(1,4,terminal,"                                                                            ");
           putString(1,5,terminal,"Black won! Press spacebar to return to menu and start a new game.   ");
-          putString(1,6,terminal,"                                                                    ");
+          putString(1,6,terminal,"Thanks for playing!                                                 ");
           for(int i=7;i<23;i++)
           {
-            putString(1,i,terminal,"                                                                     ");
+            putString(1,i,terminal,"                                                                            ");
           }
         }
         if(redPiecesLeft>0 && blackPiecesLeft>0)
@@ -264,7 +266,7 @@ public class Checkers{
             terminal.applyBackgroundColor(Terminal.Color.BLACK);
             for(int i=16;i<23;i++)
             {
-              putString(1,i,terminal,"                                                                ");
+              putString(1,i,terminal,"                                                                  ");
             }
             menuMode=!menuMode;
           }
